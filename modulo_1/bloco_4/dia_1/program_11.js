@@ -33,23 +33,20 @@ function calcSalarioLiquido(bruto) {
     menosINSS = bruto - aliquotaINSS;
   } else {
     console.log("Salário inválido");
+    return;
   }
 
-  if (menosINSS >= 0) {
-    if (menosINSS >= 1903.99 && menosINSS <= 2826.65) {
-      aliquotaTotalIR = (7.5 / 100) * menosINSS - 142.8;
-    } else if (menosINSS >= 2826.66 && menosINSS <= 3751.05) {
-      aliquotaTotalIR = (15 / 100) * menosINSS - 354.8;
-    } else if (menosINSS >= 3751.06 && menosINSS <= 4664.68) {
-      aliquotaTotalIR = (22.5 / 100) * menosINSS - 636.13;
-    } else if (menosINSS > 4664.68) {
-      aliquotaTotalIR = (27.5 / 100) * menosINSS - 869.36;
-    }
-    salarioLiquido = menosINSS - aliquotaTotalIR;
-    console.log(salarioLiquido);
-  } else {
-    console.log("Salário inválido");
+  if (menosINSS >= 1903.99 && menosINSS <= 2826.65) {
+    aliquotaTotalIR = (7.5 / 100) * menosINSS - 142.8;
+  } else if (menosINSS >= 2826.66 && menosINSS <= 3751.05) {
+    aliquotaTotalIR = (15 / 100) * menosINSS - 354.8;
+  } else if (menosINSS >= 3751.06 && menosINSS <= 4664.68) {
+    aliquotaTotalIR = (22.5 / 100) * menosINSS - 636.13;
+  } else if (menosINSS > 4664.68) {
+    aliquotaTotalIR = (27.5 / 100) * menosINSS - 869.36;
   }
+  salarioLiquido = menosINSS - aliquotaTotalIR;
+  console.log(salarioLiquido);
 }
 
 calcSalarioLiquido(3000);
