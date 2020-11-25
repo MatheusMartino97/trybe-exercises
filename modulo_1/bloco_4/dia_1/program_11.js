@@ -15,14 +15,12 @@ Acima de R$ 4.664,68: alíquota de 27,5% e parcela de R$ 869,36 a deduzir do imp
  */
 
 function calcSalarioLiquido(bruto) {
-  let aliquotaINSS
-  let aliquotaTotalIR = 0
-  let menosINSS
-  let salarioLiquido
-
+  let aliquotaINSS;
+  let aliquotaTotalIR = 0;
+  let menosINSS;
+  let salarioLiquido;
 
   if (bruto >= 0) {
-
     if (bruto <= 1556.94) {
       aliquotaINSS = (8 / 100) * bruto;
     } else if (bruto >= 1556.95 && bruto <= 2594.92) {
@@ -32,31 +30,26 @@ function calcSalarioLiquido(bruto) {
     } else if (bruto > 5189.82) {
       aliquotaINSS = 570.88;
     }
-    menosINSS = bruto - aliquotaINSS
+    menosINSS = bruto - aliquotaINSS;
   } else {
-    console.log("Salário inválido")
+    console.log("Salário inválido");
   }
-   
 
-    if (menosINSS >= 0) {
-        if (menosINSS >= 1903.99 && menosINSS <= 2826.65) {
-            aliquotaTotalIR = (7.5 / 100 * menosINSS) - 142.80
-        } else if (menosINSS >= 2826.66 && menosINSS <= 3751.05) {
-            aliquotaTotalIR = (15 / 100 * menosINSS) - 354.80
-        } else if (menosINSS >= 3751.06 && menosINSS <= 4664.68) {
-            aliquotaTotalIR = (22.5 / 100 * menosINSS) - 636.13
-        } else if (menosINSS > 4664.68) {
-            aliquotaTotalIR = (27.5 / 100 * menosINSS) - 869.36
-        }
-        salarioLiquido = menosINSS - aliquotaTotalIR
-        console.log(salarioLiquido)
-    } else {
-        console.log("Salário inválido")
+  if (menosINSS >= 0) {
+    if (menosINSS >= 1903.99 && menosINSS <= 2826.65) {
+      aliquotaTotalIR = (7.5 / 100) * menosINSS - 142.8;
+    } else if (menosINSS >= 2826.66 && menosINSS <= 3751.05) {
+      aliquotaTotalIR = (15 / 100) * menosINSS - 354.8;
+    } else if (menosINSS >= 3751.06 && menosINSS <= 4664.68) {
+      aliquotaTotalIR = (22.5 / 100) * menosINSS - 636.13;
+    } else if (menosINSS > 4664.68) {
+      aliquotaTotalIR = (27.5 / 100) * menosINSS - 869.36;
     }
-
-
-
+    salarioLiquido = menosINSS - aliquotaTotalIR;
+    console.log(salarioLiquido);
+  } else {
+    console.log("Salário inválido");
+  }
 }
 
-calcSalarioLiquido(-3000)
-
+calcSalarioLiquido(3000);
