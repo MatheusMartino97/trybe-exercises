@@ -3,21 +3,21 @@
  *
  * let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
  *
- * 5 - Utilizando for , descubra qual o maior valor contido no array e imprima-o;
+ * 7 - Utilizando for, descubra qual o menor valor contido no array e imprima-o
  */
 
 let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 
-function arrayBiggestValue (array) {
-  let biggestNumber = array[0]
+function arraySmallestValue (array) {
+  let smallestNumber = array[0]
 
   for (let i = 0; i < array.length; i++) {
 
-    if (array[i] > biggestNumber) {
-      biggestNumber = array[i]
+    if (array[i] < smallestNumber) {
+      smallestNumber = array[i]
     }
   }
-  console.log(biggestNumber)
+  console.log(smallestNumber)
 }
 
-arrayBiggestValue(numbers)
+arraySmallestValue(numbers)
