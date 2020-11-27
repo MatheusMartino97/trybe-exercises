@@ -22,3 +22,11 @@ function makeArrayXtoY(x, y) {
 }
 
 makeArrayXtoY(1, 25);
+
+// Ao invés de criar uma array específica, criei uma função que retorna arrays com quaisquer que forem os parâmetros desejados.
+// Note que a função também funciona se o primeiro número for igual ao segundo e se o objetivo for criar um array decrescente.
+// 
+// Exemplos:
+// makeArrayXtoY(6, 47); Cria uma array que vai de 6 até 47 e loga no console.
+// makeArrayXtoY(7, 0); Cria uma array que vai de 7 até 0 e loga no console.
+// makeArrayXtoY(8, 8); Cria uma array que contem o número 8 e loga no console.
