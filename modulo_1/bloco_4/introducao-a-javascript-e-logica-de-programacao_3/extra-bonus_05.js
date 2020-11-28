@@ -49,7 +49,7 @@ function hollowPyramid(base, char1, char2) {
   }
 }
 
-hollowPyramid(5, "*", " ");
+hollowPyramid(7, "*", " ");
 
 // Note que você pode mudar o tamanho da arvore assim como os caracteres que a compoem.
 // Note também que a função funciona mesmo com números negativos e números pares.
