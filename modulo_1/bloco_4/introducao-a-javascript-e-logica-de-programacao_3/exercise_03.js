@@ -21,6 +21,6 @@ function invertTriangle(n, char1, char2) {
   }
 }
 
-invertTriangle(5, ' ', '*');
+invertTriangle(5, " ", "*");
 
 // Você pode selecionar quais characteres farão parte do triangulo

@@ -2,13 +2,12 @@
 // será sempre ímpar:
 
 function hollowPyramid(base, char1, char2) {
-    let n = Math.abs(base)
-    if (n % 2 === 0) {
-        n += 1
-    }
+  let n = Math.abs(base);
+  if (n % 2 === 0) {
+    n += 1;
+  }
 
-  
-  let line;  
+  let line;
   let side = "";
   let middle = "";
   let sideSize = (n - 1) / 2;
