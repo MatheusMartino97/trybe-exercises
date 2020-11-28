@@ -3,13 +3,14 @@
 
 function hollowPyramid(base, char1, char2) {
     let n = Math.abs(base)
-    if (n % 2 ===0) {
+    if (n % 2 === 0) {
         n += 1
     }
 
+  
+  let line;  
   let side = "";
   let middle = "";
-  let line;
   let sideSize = (n - 1) / 2;
 
   for (let i = 1; i <= n; i++) {
