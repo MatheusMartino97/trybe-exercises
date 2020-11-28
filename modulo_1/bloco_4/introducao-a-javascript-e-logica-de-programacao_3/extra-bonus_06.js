@@ -1,7 +1,12 @@
 // Bonus 06 - Faça uma pirâmide com n asteriscos de base que seja vazia no meio. Assuma que o valor de n
 // será sempre ímpar:
 
-function hollowPyramid(n, char1, char2) {
+function hollowPyramid(base, char1, char2) {
+    let n = Math.abs(base)
+    if (n % 2 ===0) {
+        n += 1
+    }
+
   let side = "";
   let middle = "";
   let line;
@@ -46,3 +51,4 @@ function hollowPyramid(n, char1, char2) {
 hollowPyramid(5, "*", " ");
 
 // Note que você pode mudar o tamanho da arvore assim como os caracteres que a compoe
+// Note também que a função funciona mesmo com números negativos e números pares
