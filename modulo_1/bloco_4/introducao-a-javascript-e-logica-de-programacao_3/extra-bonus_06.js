@@ -43,4 +43,6 @@ function hollowPyramid(n, char1, char2) {
   }
 }
 
-hollowPyramid(25, "*", " ");
+hollowPyramid(5, "*", " ");
+
+// Note que você pode mudar o tamanho da arvore assim como os caracteres que a compoem
