@@ -26,7 +26,7 @@ function invertTriangle(n, char1, char2) {
   }
 }
 
-invertTriangle(6, " ", "*");
+invertTriangle(7, " ", "o");
 
 // Você pode escolher quais caracteres farão parte da pirâmide
 // Note que a função também funciona se a base for um número par
