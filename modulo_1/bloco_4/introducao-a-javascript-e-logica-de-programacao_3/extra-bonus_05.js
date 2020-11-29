@@ -12,7 +12,7 @@ function hollowPyramid(base, char1, char2) {
   let middle = "";
   let sideSize = (n - 1) / 2;
 
-  for (let i = 1; i <= n; i++) {
+  for (let i = 1; i <= n; i+=1) {
     line = "";
 
     if (i === 1) {
