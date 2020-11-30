@@ -1,4 +1,5 @@
-// Bonus 1 -  Faça um programa que receba uma string em algarismos romanos e retorne o número que a string representa
+// Bonus 1 -  Faça um programa que receba uma string em algarismos romanos e retorne o número que
+// a string representa
 
 function romanToArabic(roman) {
   let romanUpper = roman.toUpperCase();
