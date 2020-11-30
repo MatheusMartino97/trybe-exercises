@@ -8,13 +8,13 @@ function hollowPyramid(base, char1, char2, short) {
   }
 
   let line;
-  let size = 1
+  let size = 1;
   let side = "";
   let middle = "";
   let sideSize = (n - 1) / 2;
 
-  if (short === 'short') {
-    size = 2
+  if (short === "short") {
+    size = 2;
   }
 
   for (let i = 1; i <= n; i += size) {
@@ -51,7 +51,7 @@ function hollowPyramid(base, char1, char2, short) {
   }
 }
 
-hollowPyramid(7, "*", " ", 'short');
+hollowPyramid(7, "*", " ", "short");
 
 // (Opcional) Adicione " 'short' " como quarto parâmetro da função para obter um triangulo mais compacto
 // Note que você pode mudar o tamanho da arvore assim como os caracteres que a compoem.
