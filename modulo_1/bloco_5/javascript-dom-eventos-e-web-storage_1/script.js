@@ -12,3 +12,4 @@
 document.querySelector('p').innerText = 'Já trabalhando e ganhando o suficiente pra pagar a Trybe'
 document.getElementsByClassName('main-content')[0].style = 'background-color: rgb(76,164,109)'
 document.getElementsByClassName('center-content')[0].style = 'background-color: rgb(255,255,255)'
+document.querySelector('h1').innerText = 'Exercício 5.1 - JavaScript'
