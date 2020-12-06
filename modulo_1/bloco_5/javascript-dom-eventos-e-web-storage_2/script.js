@@ -22,5 +22,18 @@ paragraph.innerText = 'Manipulando o DOM'
 divClassCenterContent.appendChild(paragraph)
 
 // 5 - Adicione a tag div com a classe left-content como filho da tag div criada no passo 2;
+let divClassLeftContent = document.createElement('div')
+divClassLeftContent.classList.add('left-content')
+divClassMainContent.appendChild(divClassLeftContent)
+
+// 6 - Adicione a tag div com a classe right-content como filho da tag div criada no passo 2
+let divClassRightContent = document.createElement('div')
+divClassRightContent.classList.add('right-content')
+divClassMainContent.appendChild(divClassRightContent)
+
+// 7 - Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do div criado no passo 5;
+let smallImage = document.createElement('img')
+smallImage.src = 'https://picsum.photos/200'
+divClassLeftContent.appendChild(smallImage)
 
 console.log(document.querySelectorAll('.main-content *'))
