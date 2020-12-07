@@ -36,4 +36,23 @@ let smallImage = document.createElement('img')
 smallImage.src = 'https://picsum.photos/200'
 divClassLeftContent.appendChild(smallImage)
 
-console.log(document.querySelectorAll('.main-content *'))
+// 8 - Adicione uma lista não ordenada com os valores de 1 a 10 por extenso como valores da lista. Essa lista deve ser filha do div criado no passo 6;
+let unorderedList = document.createElement('ul')
+divClassRightContent.appendChild(unorderedList)
+
+let listValues = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez']
+
+for (let number of listValues) {
+    let listItem = document.createElement('li')
+
+    unorderedList.appendChild(listItem)
+    listItem.innerText = number
+}
+
+// 9 - Adicione 3 tags h3 , todas sendo filhas do div criado no passo 2.
+for (let i = 1; i <= 3; i++) {
+    let headingThree = document.createElement('h3')
+
+    divClassMainContent.appendChild(headingThree)
+    headingThree.innerText = i +  '° h3'
+}
