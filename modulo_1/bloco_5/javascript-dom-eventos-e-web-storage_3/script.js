@@ -7,7 +7,8 @@ addFridayClass("friday");
 createHollidayButton("Feriados");
 listenToBtnHolliday();
 createFridayButton("Sexta-feira");
-listenToBtnFriday();
+listenToBtnFridayButton();
+listenToDaysUnorderedList()
 
 function createDaysOfTheWeek() {
   const weekDays = [
@@ -102,7 +103,7 @@ function createFridayButton(buttonInnerText) {
   buttonsContainerDivs.appendChild(btnFridayButton);
 }
 
-function listenToBtnFriday() {
+function listenToBtnFridayButton() {
   const btnFridayButton = document.querySelector("#btn-friday");
 
   btnFridayButton.addEventListener("click", toggleFridaysInnerText);
@@ -130,10 +131,24 @@ function fridayDays() {
   const daysOfFriday = [];
 
   for (let friday of daysOfFridayNodeList) {
-    let day = friday.innerText;
+    const day = friday.innerText;
 
     daysOfFriday.push(day);
   }
   return daysOfFriday;
 }
 
+function listenToDaysUnorderedList () {
+  const daysUnorderedList = document.querySelector('#days')
+
+  daysUnorderedList.addEventListener('mouseover', zoomInDayListItems)
+  daysUnorderedList.addEventListener('mouseout', restoreZoomDayListItem)
+}
+
+function zoomInDayListItems (event) {
+  event.target.style.fontSize = '30px'
+}
+
+function restoreZoomDayListItem (event) {
+  event.target.style.fontSize = '20px'
+}
