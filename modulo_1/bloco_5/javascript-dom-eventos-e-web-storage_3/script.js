@@ -28,7 +28,8 @@ const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 
 createDayListItems(dezDaysList, "day");
 addHollidayClass("holiday");
 addFridayClass("friday");
-createHollidayButton('Feriados')
+createHollidayButton('Feriados');
+listenToBtnHolliday()
 
 function createDayListItems(daysList, classToBeAdded) {
   for (let day of daysList) {
@@ -56,7 +57,7 @@ function addHollidayClass(classToBeAdded) {
 }
 
 function addFridayClass(classToBeAdded) {
-  let dayListItemsNodeList = document.querySelectorAll(".day");
+  const dayListItemsNodeList = document.querySelectorAll(".day");
 
   // The loop will begin at the first friday index, and we will add 7 too the counter so that it will be alays land on friday.
   for (let i = 5; i < dayListItemsNodeList.length; i += 7) {
@@ -65,10 +66,30 @@ function addFridayClass(classToBeAdded) {
 }
 
 function createHollidayButton(buttonInnerText) {
-  let btnHollidayButton = document.createElement("button");
-  let buttonsContainerDivs = document.querySelector(".buttons-container");
+  const btnHollidayButton = document.createElement("button");
+  const buttonsContainerDivs = document.querySelector(".buttons-container");
 
   btnHollidayButton.id = "btn-holliday";
   btnHollidayButton.innerText = buttonInnerText
   buttonsContainerDivs.appendChild(btnHollidayButton)
+}
+
+function listenToBtnHolliday () {
+    const btnHollidayButton = document.querySelector("#btn-holliday")
+
+    btnHollidayButton.addEventListener('click', toggleBackGroundColor)
+}
+
+function toggleBackGroundColor () {
+    const holidayListItems = document.querySelectorAll('.holiday')
+
+    console.log(holidayListItems)
+
+    for (let day of holidayListItems) {
+        if (day.style.backgroundColor === '') {
+            day.style.backgroundColor = 'cyan'
+        } else {
+            day.style.backgroundColor = ''
+        }
+    }
 }
