@@ -9,7 +9,9 @@ listenToBtnHolliday();
 createFridayButton("Sexta-feira");
 listenToBtnFridayButton();
 listenToDaysUnorderedList();
-createSpan('Terminar projeto');
+createSpan("Terminar projeto");
+addColorLegend('green');
+
 
 function createDaysOfTheWeek() {
   const weekDays = [
@@ -87,10 +89,10 @@ function toggleBackGroundColor() {
   for (let day of holidayListItems) {
     if (day.style.backgroundColor === "") {
       day.style.backgroundColor = "#0ff";
-      day.style.borderRadius = '23px 5px'
+      day.style.borderRadius = "23px 5px";
     } else {
       day.style.backgroundColor = "";
-      day.style.border = ''
+      day.style.border = "";
     }
   }
 }
@@ -139,25 +141,33 @@ function fridayDays() {
   return daysOfFriday;
 }
 
-function listenToDaysUnorderedList () {
-  const daysUnorderedList = document.querySelector('#days')
+function listenToDaysUnorderedList() {
+  const daysUnorderedList = document.querySelector("#days");
 
-  daysUnorderedList.addEventListener('mouseover', zoomInDayListItems)
-  daysUnorderedList.addEventListener('mouseout', restoreZoomDayListItem)
+  daysUnorderedList.addEventListener("mouseover", zoomInDayListItems);
+  daysUnorderedList.addEventListener("mouseout", restoreZoomDayListItem);
 }
 
-function zoomInDayListItems (event) {
-  event.target.style.fontSize = '30px'
+function zoomInDayListItems(event) {
+  event.target.style.fontSize = "30px";
 }
 
-function restoreZoomDayListItem (event) {
-  event.target.style.fontSize = '20px'
+function restoreZoomDayListItem(event) {
+  event.target.style.fontSize = "20px";
 }
 
-function createSpan (spanInnerText) {
-  let span = document.createElement('span')
-  let myTasksDivs = document.querySelector('.my-tasks')
+function createSpan(spanInnerText) {
+  const span = document.createElement("span");
+  const myTasksDivs = document.querySelector(".my-tasks");
 
-  span.innerText = spanInnerText
-  myTasksDivs.appendChild(span)
+  span.innerText = spanInnerText;
+  myTasksDivs.appendChild(span);
+}
+
+function addColorLegend (divBackgroundColor) {
+  const div = document.createElement('div')
+  const myTasksDivs = document.querySelector('.my-tasks')
+
+  div.style.backgroundColor = divBackgroundColor
+  myTasksDivs.appendChild(div)
 }
