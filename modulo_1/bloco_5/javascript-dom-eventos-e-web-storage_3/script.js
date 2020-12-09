@@ -25,39 +25,50 @@ createDaysOfTheWeek();
 
 const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 
-createDayListItems(dezDaysList, 'day')
-addHollidayClass('holiday')
-addFridayClass('friday')
+createDayListItems(dezDaysList, "day");
+addHollidayClass("holiday");
+addFridayClass("friday");
+createHollidayButton('Feriados')
 
+function createDayListItems(daysList, classToBeAdded) {
+  for (let day of daysList) {
+    let dayListItems = document.createElement("li");
+    let daysUnorderedList = document.querySelector("#days");
 
-function createDayListItems (daysList, classToBeAdded) {
-    for (let day of daysList) {
-        let dayListItems = document.createElement("li")
-        let daysUnorderedList = document.querySelector('#days')
-
-        dayListItems.classList.add(classToBeAdded)
-        dayListItems.innerText = day
-        daysUnorderedList.appendChild(dayListItems)
-    }
+    dayListItems.classList.add(classToBeAdded);
+    dayListItems.innerText = day;
+    daysUnorderedList.appendChild(dayListItems);
+  }
 }
 
-function addHollidayClass (classToBeAdded) {
-    let dayListItemsNodeList = document.querySelectorAll('.day')
+function addHollidayClass(classToBeAdded) {
+  let dayListItemsNodeList = document.querySelectorAll(".day");
 
-    for (let day of dayListItemsNodeList) {
-        if (day.innerText === '24' || day.innerText === '25' || day.innerText === '31') {
-            day.classList.add(classToBeAdded)
-        }
+  for (let day of dayListItemsNodeList) {
+    if (
+      day.innerText === "24" ||
+      day.innerText === "25" ||
+      day.innerText === "31"
+    ) {
+      day.classList.add(classToBeAdded);
     }
+  }
 }
 
-function addFridayClass (classToBeAdded) {
-    let dayListItemsNodeList = document.querySelectorAll('.day')
+function addFridayClass(classToBeAdded) {
+  let dayListItemsNodeList = document.querySelectorAll(".day");
 
-    // The loop will begin at the first friday index, and we will add 7 too the counter so that it will be alays land on friday.
-    for (let i = 5; i < dayListItemsNodeList.length; i += 7) {    
-        dayListItemsNodeList[i].classList.add(classToBeAdded)
-    }
+  // The loop will begin at the first friday index, and we will add 7 too the counter so that it will be alays land on friday.
+  for (let i = 5; i < dayListItemsNodeList.length; i += 7) {
+    dayListItemsNodeList[i].classList.add(classToBeAdded);
+  }
 }
 
+function createHollidayButton(buttonInnerText) {
+  let btnHollidayButton = document.createElement("button");
+  let buttonsContainerDivs = document.querySelector(".buttons-container");
 
+  btnHollidayButton.id = "btn-holliday";
+  btnHollidayButton.innerText = buttonInnerText
+  buttonsContainerDivs.appendChild(btnHollidayButton)
+}
