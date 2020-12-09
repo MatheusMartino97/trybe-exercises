@@ -85,8 +85,10 @@ function toggleBackGroundColor() {
   for (let day of holidayListItems) {
     if (day.style.backgroundColor === "") {
       day.style.backgroundColor = "#0ff";
+      day.style.borderRadius = '23px 5px'
     } else {
       day.style.backgroundColor = "";
+      day.style.border = ''
     }
   }
 }
