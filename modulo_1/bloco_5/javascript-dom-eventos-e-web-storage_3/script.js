@@ -6,8 +6,8 @@ addHollidayClass("holiday");
 addFridayClass("friday");
 createHollidayButton("Feriados");
 listenToBtnHolliday();
-createFridayButton('Sexta-feira');
-listenToBtnFriday()
+createFridayButton("Sexta-feira");
+listenToBtnFriday();
 
 function createDaysOfTheWeek() {
   const weekDays = [
@@ -91,47 +91,47 @@ function toggleBackGroundColor() {
   }
 }
 
-function createFridayButton (buttonInnerText) {
-    const btnFridayButton = document.createElement("button");
-    const buttonsContainerDivs = document.querySelector(".buttons-container");
-  
-    btnFridayButton.id = "btn-friday";
-    btnFridayButton.innerText = buttonInnerText;
-    buttonsContainerDivs.appendChild(btnFridayButton);
+function createFridayButton(buttonInnerText) {
+  const btnFridayButton = document.createElement("button");
+  const buttonsContainerDivs = document.querySelector(".buttons-container");
+
+  btnFridayButton.id = "btn-friday";
+  btnFridayButton.innerText = buttonInnerText;
+  buttonsContainerDivs.appendChild(btnFridayButton);
 }
 
 function listenToBtnFriday() {
-    const btnFridayButton = document.querySelector("#btn-friday");
-  
-    btnFridayButton.addEventListener("click", toggleFridaysInnerText);
-  }
+  const btnFridayButton = document.querySelector("#btn-friday");
 
+  btnFridayButton.addEventListener("click", toggleFridaysInnerText);
+}
 
 function toggleFridaysInnerText() {
-    const fridayListItems = document.querySelectorAll('.friday')
-    const fridayMessage = 'SEXTOU!'    
+  const fridayListItems = document.querySelectorAll(".friday");
+  const fridayMessage = "SEXTOU!";
 
-    for (let i = 0; i < fridayListItems.length; i++) {
-        if (fridayListItems[i].innerText !== fridayMessage) {
-            fridayListItems[i].innerText = fridayMessage
-            fridayListItems[i].style.color = '#f00'
-        } else {
-            fridayListItems[i].innerText = daysOfFriday[i]
-            fridayListItems[i].style.color = '#777'
-        }
+  for (let i = 0; i < fridayListItems.length; i++) {
+    if (fridayListItems[i].innerText !== fridayMessage) {
+      fridayListItems[i].innerText = fridayMessage;
+      fridayListItems[i].style.color = "#f00";
+    } else {
+      fridayListItems[i].innerText = daysOfFriday[i];
+      fridayListItems[i].style.color = "#777";
     }
+  }
 }
 
-const daysOfFriday = fridayDays()
+const daysOfFriday = fridayDays();
 
-function fridayDays () {
-    const daysOfFridayNodeList = document.querySelectorAll('.friday')
-    const daysOfFriday = []
-    
-    for (let friday of daysOfFridayNodeList) {
-        let day = friday.innerText
+function fridayDays() {
+  const daysOfFridayNodeList = document.querySelectorAll(".friday");
+  const daysOfFriday = [];
 
-        daysOfFriday.push(day)
-    }
-    return daysOfFriday
+  for (let friday of daysOfFridayNodeList) {
+    let day = friday.innerText;
+
+    daysOfFriday.push(day);
+  }
+  return daysOfFriday;
 }
+
