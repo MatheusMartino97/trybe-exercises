@@ -8,7 +8,8 @@ createHollidayButton("Feriados");
 listenToBtnHolliday();
 createFridayButton("Sexta-feira");
 listenToBtnFridayButton();
-listenToDaysUnorderedList()
+listenToDaysUnorderedList();
+createSpan('Terminar projeto');
 
 function createDaysOfTheWeek() {
   const weekDays = [
@@ -151,4 +152,12 @@ function zoomInDayListItems (event) {
 
 function restoreZoomDayListItem (event) {
   event.target.style.fontSize = '20px'
+}
+
+function createSpan (spanInnerText) {
+  let span = document.createElement('span')
+  let myTasksDivs = document.querySelector('.my-tasks')
+
+  span.innerText = spanInnerText
+  myTasksDivs.appendChild(span)
 }
