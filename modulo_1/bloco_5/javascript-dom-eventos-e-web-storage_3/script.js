@@ -11,6 +11,7 @@ listenToBtnFridayButton();
 listenToDaysUnorderedList();
 createSpan("Terminar projeto");
 addColorLegend('green');
+listenToColorLegend()
 
 
 function createDaysOfTheWeek() {
@@ -90,9 +91,13 @@ function toggleBackGroundColor() {
     if (day.style.backgroundColor === "") {
       day.style.backgroundColor = "#0ff";
       day.style.borderRadius = "23px 5px";
+      day.style.margin = '4px 0'
+      day.style.borderBottom = '1px inset darkcyan'
+
     } else {
       day.style.backgroundColor = "";
       day.style.border = "";
+      day.style.margin = '5px 0'
     }
   }
 }
@@ -149,11 +154,15 @@ function listenToDaysUnorderedList() {
 }
 
 function zoomInDayListItems(event) {
-  event.target.style.fontSize = "30px";
+  const dayListItemsTargets = event.target
+
+  dayListItemsTargets.style.fontSize = "30px";
 }
 
 function restoreZoomDayListItem(event) {
-  event.target.style.fontSize = "20px";
+  const dayListItemsTargets = event.target
+
+  dayListItemsTargets.style.fontSize = "20px";
 }
 
 function createSpan(spanInnerText) {
@@ -170,4 +179,17 @@ function addColorLegend (divBackgroundColor) {
 
   div.style.backgroundColor = divBackgroundColor
   myTasksDivs.appendChild(div)
+}
+
+function listenToColorLegend () {
+  const colorLegend = document.querySelector('.my-tasks>div')
+
+  colorLegend.addEventListener('click', addClassSelected)
+}
+
+function addClassSelected(event) {
+  const colorLegendDivTarget = event.target
+
+  colorLegendDivTarget.classList.add('task')
+  colorLegendDivTarget.classList.toggle('selected')
 }
