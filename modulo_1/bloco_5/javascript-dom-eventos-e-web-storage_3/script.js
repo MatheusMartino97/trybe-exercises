@@ -9,7 +9,7 @@ listenToBtnHolliday();
 createFridayButton("Sexta-feira");
 listenToBtnFridayButton();
 listenToDaysUnorderedList();
-createSpan("Terminar projeto");
+createSpan("Projeto");
 addColorLegend('green');
 listenToColorLegend()
 
@@ -177,6 +177,7 @@ function addColorLegend (divBackgroundColor) {
   const div = document.createElement('div')
   const myTasksDivs = document.querySelector('.my-tasks')
 
+  div.id = 'color-legend'
   div.style.backgroundColor = divBackgroundColor
   myTasksDivs.appendChild(div)
 }
@@ -189,7 +190,10 @@ function listenToColorLegend () {
 
 function addClassSelected(event) {
   const colorLegendDivTarget = event.target
+  const span = document.querySelector("span")
 
   colorLegendDivTarget.classList.add('task')
   colorLegendDivTarget.classList.toggle('selected')
+  span.classList.toggle('selected')
+
 }

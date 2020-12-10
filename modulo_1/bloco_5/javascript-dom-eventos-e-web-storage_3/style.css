@@ -79,18 +79,20 @@ label {
 
 .my-tasks div {
   border: 1px solid black;
-  border-radius: 100%;
+  transform: rotate(45deg);
+  border-radius: 50% 50% 0 50%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   display: inline-block;
-  height: 35px;
+  height: 45px;
   margin-left: 10px;
   vertical-align: middle;
-  width: 35px;
+  width: 45px;
 }
 
 .my-tasks div:hover {
-  height: 45px;
-  width: 45px;
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
 }
 
 .my-tasks span {
@@ -100,6 +102,23 @@ label {
   letter-spacing: 3px;
   padding-bottom: 10px;
   vertical-align: middle;
+}
+
+span.selected {
+  font-weight: 600;
+  color: green;
+}
+
+div.selected {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+}
+
+div.selected:hover {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
 }
 
 .tasks-container {
