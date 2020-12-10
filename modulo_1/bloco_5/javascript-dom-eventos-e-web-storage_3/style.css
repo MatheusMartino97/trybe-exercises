@@ -75,6 +75,7 @@ label {
   height: 100px;
   vertical-align: middle;
   width: 49%;
+  position: relative;
 }
 
 .my-tasks div {
@@ -87,12 +88,15 @@ label {
   margin-left: 10px;
   vertical-align: middle;
   width: 45px;
+  position: absolute;
 }
 
 .my-tasks div:hover {
   border-radius: 50%;
   height: 35px;
   width: 35px;
+  top: 45px;
+  left: 190px
 }
 
 .my-tasks span {
@@ -102,6 +106,9 @@ label {
   letter-spacing: 3px;
   padding-bottom: 10px;
   vertical-align: middle;
+  position: absolute;
+  top: 55px;
+  left: 100px;
 }
 
 span.selected {
@@ -113,12 +120,16 @@ div.selected {
   height: 25px;
   width: 25px;
   border-radius: 50%;
+  top: 50px;
+  left: 195px
 }
 
 div.selected:hover {
   height: 25px;
   width: 25px;
   border-radius: 50%;
+  top: 50px;
+  left: 195px
 }
 
 .tasks-container {
