@@ -125,7 +125,8 @@ function toggleFridaysInnerText() {
       fridayListItems[i].style.color = '#f00';
     } else {
       fridayListItems[i].innerText = daysOfFriday[i];
-      fridayListItems[i].style.color = '#777';
+      // fridayListItems[i].style.color = '#777';
+      fridayListItems[i].style = ''
     }
   }
 }
@@ -213,5 +214,5 @@ function toggleSelectedDayListItems(event) {
 
   if (span.className === 'selected') {
     dayListItems.classList.toggle('selected');
-  }
+  } 
 }
