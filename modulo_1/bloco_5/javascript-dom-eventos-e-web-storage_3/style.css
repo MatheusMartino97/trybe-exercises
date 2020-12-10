@@ -37,6 +37,10 @@ button {
   height: 30px;
 }
 
+#days .selected {
+  color: green;
+}
+
 .input-container {
   width: 49%;
   height: 100px;

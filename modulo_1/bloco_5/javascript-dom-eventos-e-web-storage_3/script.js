@@ -10,9 +10,8 @@ createFridayButton("Sexta-feira");
 listenToBtnFridayButton();
 listenToDaysUnorderedList();
 createSpan("Projeto");
-addColorLegend('green');
-listenToColorLegend()
-
+addColorLegend("green");
+listenToColorLegend();
 
 function createDaysOfTheWeek() {
   const weekDays = [
@@ -91,13 +90,12 @@ function toggleBackGroundColor() {
     if (day.style.backgroundColor === "") {
       day.style.backgroundColor = "#0ff";
       day.style.borderRadius = "23px 5px";
-      day.style.margin = '4px 0'
-      day.style.borderBottom = '1px inset darkcyan'
-
+      day.style.margin = "4px 0";
+      day.style.borderBottom = "1px inset darkcyan";
     } else {
       day.style.backgroundColor = "";
       day.style.border = "";
-      day.style.margin = '5px 0'
+      day.style.margin = "5px 0";
     }
   }
 }
@@ -151,16 +149,17 @@ function listenToDaysUnorderedList() {
 
   daysUnorderedList.addEventListener("mouseover", zoomInDayListItems);
   daysUnorderedList.addEventListener("mouseout", restoreZoomDayListItem);
+  daysUnorderedList.addEventListener("click", toggleSelectedDayListItems);
 }
 
 function zoomInDayListItems(event) {
-  const dayListItemsTargets = event.target
+  const dayListItemsTargets = event.target;
 
   dayListItemsTargets.style.fontSize = "30px";
 }
 
 function restoreZoomDayListItem(event) {
-  const dayListItemsTargets = event.target
+  const dayListItemsTargets = event.target;
 
   dayListItemsTargets.style.fontSize = "20px";
 }
@@ -173,27 +172,46 @@ function createSpan(spanInnerText) {
   myTasksDivs.appendChild(span);
 }
 
-function addColorLegend (divBackgroundColor) {
-  const div = document.createElement('div')
-  const myTasksDivs = document.querySelector('.my-tasks')
+function addColorLegend(divBackgroundColor) {
+  const div = document.createElement("div");
+  const myTasksDivs = document.querySelector(".my-tasks");
 
-  div.id = 'color-legend'
-  div.style.backgroundColor = divBackgroundColor
-  myTasksDivs.appendChild(div)
+  div.id = "color-legend";
+  div.style.backgroundColor = divBackgroundColor;
+  myTasksDivs.appendChild(div);
 }
 
-function listenToColorLegend () {
-  const colorLegend = document.querySelector('.my-tasks>div')
+function listenToColorLegend() {
+  const colorLegend = document.querySelector(".my-tasks>div");
 
-  colorLegend.addEventListener('click', addClassSelected)
+  colorLegend.addEventListener("click", addClassSelected);
 }
+
+// This function toggles the 'selected' class of the #days list items 
+// when the color legend is pinned. When the color legend is unpinned, the 
+// 'selected' class is removed form all the #days list items.
 
 function addClassSelected(event) {
-  const colorLegendDivTarget = event.target
-  const span = document.querySelector("span")
+  const colorLegendDivTarget = event.target;
+  const span = document.querySelector("span");
+  const dayListItem = document.querySelectorAll("#days li");
 
-  colorLegendDivTarget.classList.add('task')
-  colorLegendDivTarget.classList.toggle('selected')
-  span.classList.toggle('selected')
+  colorLegendDivTarget.classList.add("task");
+  colorLegendDivTarget.classList.toggle("selected");
+  span.classList.toggle("selected");
 
+  if (span.className === "") {
+    for (let day of dayListItem) {
+      day.classList.remove("selected");
+    }
+  }
+}
+
+function toggleSelectedDayListItems(event) {
+  const dayListItems = event.target;
+  const span = document.querySelector("span");
+
+  if (span.className === "selected") {
+    dayListItems.classList.toggle("selected");
+  }
 }
