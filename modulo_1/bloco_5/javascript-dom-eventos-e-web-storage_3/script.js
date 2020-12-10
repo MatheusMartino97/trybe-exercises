@@ -12,6 +12,7 @@ listenToDaysUnorderedList();
 createSpan('Projeto');
 addColorLegend('green');
 listenToColorLegend();
+listenToBtnAddButton();
 
 function createDaysOfTheWeek() {
   const weekDays = [
@@ -188,7 +189,7 @@ function listenToColorLegend() {
   colorLegend.addEventListener('click', addClassSelected);
 }
 
-// This function toggles the 'selected' class of the #days list items
+// The following function toggles the 'selected' class of the #days list items
 // when the color legend is pinned. When the color legend is unpinned, the
 // 'selected' class is removed form all the #days list items.
 
@@ -216,3 +217,29 @@ function toggleSelectedDayListItems(event) {
     dayListItems.classList.toggle('selected');
   } 
 }
+
+// The following function also listen to the input element so it can be
+// used as target to call the function that sends the input value to the
+// task list
+function listenToBtnAddButton () {
+  const btnAddButton = document.querySelector('#btn-add')
+  const taskInput = document.querySelector('#task-input')
+
+  btnAddButton.addEventListener('click', addPlans)
+  taskInput.addEventListener('keydown', addPlans)
+}
+
+function addPlans (event) {
+  const btnAddButton = document.querySelector('#btn-add')
+  const listItem = document.createElement('li')
+  const taskListUnorderedLists = document.querySelector('ul.task-list')
+  const taskInput = document.querySelector('#task-input')
+  const enterKeyCode = 13
+
+  if (event.target === btnAddButton || event.keyCode === enterKeyCode) {
+    listItem.innerText = taskInput.value
+  taskListUnorderedLists.appendChild(listItem)
+  taskInput.value = ''
+  }
+}
+
