@@ -187,8 +187,8 @@ function listenToColorLegend() {
   colorLegend.addEventListener("click", addClassSelected);
 }
 
-// This function toggles the 'selected' class of the #days list items 
-// when the color legend is pinned. When the color legend is unpinned, the 
+// This function toggles the 'selected' class of the #days list items
+// when the color legend is pinned. When the color legend is unpinned, the
 // 'selected' class is removed form all the #days list items.
 
 function addClassSelected(event) {
