@@ -11,6 +11,12 @@ button {
   margin: 20px;
 }
 
+button,
+li.day,
+#color-legend {
+  cursor: pointer;
+}
+
 #btn-add {
   margin: 0;
 }
@@ -100,7 +106,7 @@ label {
   height: 35px;
   width: 35px;
   top: 45px;
-  left: 190px
+  left: 190px;
 }
 
 .my-tasks span {
@@ -125,7 +131,7 @@ div.selected {
   width: 25px;
   border-radius: 50%;
   top: 50px;
-  left: 195px
+  left: 195px;
 }
 
 div.selected:hover {
@@ -133,7 +139,7 @@ div.selected:hover {
   width: 25px;
   border-radius: 50%;
   top: 50px;
-  left: 195px
+  left: 195px;
 }
 
 .tasks-container {
