@@ -98,7 +98,6 @@ label {
   margin-left: 10px;
   vertical-align: middle;
   width: 45px;
-  position: absolute;
 }
 
 .my-tasks div:hover {
@@ -116,7 +115,6 @@ label {
   letter-spacing: 3px;
   padding-bottom: 10px;
   vertical-align: middle;
-  position: absolute;
   top: 55px;
   left: 100px;
 }
