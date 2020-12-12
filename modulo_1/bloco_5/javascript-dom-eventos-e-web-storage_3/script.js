@@ -13,6 +13,7 @@ createSpan('Projeto');
 addColorLegend('green');
 listenToColorLegend();
 listenToBtnAddButton();
+listenToTaskListUnorderedList()
 
 function createDaysOfTheWeek() {
   const weekDays = [
@@ -240,5 +241,20 @@ function addPlans(event) {
     listItem.innerText = taskInput.value;
     taskListUnorderedLists.appendChild(listItem);
     taskInput.value = '';
+  }
+}
+
+function listenToTaskListUnorderedList () {
+  let taskListUnorderedLists = document.querySelector('.task-list')
+
+  taskListUnorderedLists.addEventListener('click', hashLine)
+}
+
+function hashLine (event) {
+
+  if (event.target.style.textDecoration === 'line-through') {
+    event.target.style.textDecoration = ''
+  } else {
+    event.target.style.textDecoration = 'line-through'
   }
 }
