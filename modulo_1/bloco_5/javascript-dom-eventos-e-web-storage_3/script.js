@@ -245,7 +245,7 @@ function addPlans(event) {
 }
 
 function listenToTaskListUnorderedList() {
-  let taskListUnorderedLists = document.querySelector('.task-list');
+  const taskListUnorderedLists = document.querySelector('.task-list');
 
   taskListUnorderedLists.addEventListener('click', hashLine);
   taskListUnorderedLists.addEventListener('dblclick', removeTask);
@@ -260,7 +260,7 @@ function hashLine(event) {
 }
 
 function removeTask(event) {
-  let taskListUnorderedLists = document.querySelector('.task-list');
+  const taskListUnorderedLists = document.querySelector('.task-list');
 
   if (event.target.style.textDecoration === 'line-through') {
     taskListUnorderedLists.removeChild(event.target);
