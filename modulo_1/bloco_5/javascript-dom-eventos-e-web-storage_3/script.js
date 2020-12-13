@@ -13,7 +13,7 @@ createSpan('Projeto');
 addColorLegend('green');
 listenToColorLegend();
 listenToBtnAddButton();
-listenToTaskListUnorderedList()
+listenToTaskListUnorderedList();
 
 function createDaysOfTheWeek() {
   const weekDays = [
@@ -244,26 +244,25 @@ function addPlans(event) {
   }
 }
 
-function listenToTaskListUnorderedList () {
-  let taskListUnorderedLists = document.querySelector('.task-list')
+function listenToTaskListUnorderedList() {
+  let taskListUnorderedLists = document.querySelector('.task-list');
 
-  taskListUnorderedLists.addEventListener('click', hashLine)
-  taskListUnorderedLists.addEventListener('dblclick', removeTask)
+  taskListUnorderedLists.addEventListener('click', hashLine);
+  taskListUnorderedLists.addEventListener('dblclick', removeTask);
 }
 
-function hashLine (event) {
-
+function hashLine(event) {
   if (event.target.style.textDecoration === 'line-through') {
-    event.target.style.textDecoration = ''
+    event.target.style.textDecoration = '';
   } else {
-    event.target.style.textDecoration = 'line-through'
+    event.target.style.textDecoration = 'line-through';
   }
 }
 
-function removeTask (event) {
-  let taskListUnorderedLists = document.querySelector('.task-list')
+function removeTask(event) {
+  let taskListUnorderedLists = document.querySelector('.task-list');
 
   if (event.target.style.textDecoration === 'line-through') {
-    taskListUnorderedLists.removeChild(event.target)
+    taskListUnorderedLists.removeChild(event.target);
   }
 }
