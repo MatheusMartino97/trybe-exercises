@@ -266,5 +266,4 @@ function removeTask (event) {
   if (event.target.style.textDecoration === 'line-through') {
     taskListUnorderedLists.removeChild(event.target)
   }
-  console.log(event.target)
 }
