@@ -252,17 +252,20 @@ function listenToTaskListUnorderedList() {
 }
 
 function hashLine(event) {
-  if (event.target.style.textDecoration === 'line-through') {
-    event.target.style.textDecoration = '';
+  const clickedTask = event.target
+
+  if (clickedTask.style.textDecoration === 'line-through') {
+    clickedTask.style.textDecoration = '';
   } else {
-    event.target.style.textDecoration = 'line-through';
+    clickedTask.style.textDecoration = 'line-through';
   }
 }
 
 function removeTask(event) {
   const taskListUnorderedLists = document.querySelector('.task-list');
+  const doulbeClickedTask = event.target
 
   if (event.target.style.textDecoration === 'line-through') {
-    taskListUnorderedLists.removeChild(event.target);
+    taskListUnorderedLists.removeChild(doulbeClickedTask);
   }
 }
