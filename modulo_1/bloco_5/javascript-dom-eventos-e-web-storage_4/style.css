@@ -1,28 +1,39 @@
+.body {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    height: 50%;
+}
+
+.content {
+    width: 70%;
+    text-align: justify;
+    height: 100%;
+}
+
 header {
     text-align: center;
 }
 
-.flex-container {
-    display: flex;
-    justify-content: space-around;
-}
-
-main {
+main, aside {
     border: 5px inset;
+    padding: 10px;
     border-radius: 10px;
-    max-width: 760px;
-    padding: 10px 30px;
-    text-align: justify;
 }
 
 aside {
-    border: 1px solid black;
-    width: 10%;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
     display: flex;
-    justify-content: flex-start;
     flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    min-width: 245px;
 }
+
+aside h2 {
+    text-align: center;
+}
+
+input, p {
+    display: inline;
+}
+
