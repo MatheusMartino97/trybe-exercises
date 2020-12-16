@@ -1,3 +1,28 @@
 header {
     text-align: center;
 }
+
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+main {
+    border: 5px inset;
+    border-radius: 10px;
+    max-width: 760px;
+    padding: 10px 30px;
+    text-align: justify;
+}
+
+aside {
+    border: 1px solid black;
+    width: 10%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
