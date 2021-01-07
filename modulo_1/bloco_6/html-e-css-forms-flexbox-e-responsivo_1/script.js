@@ -43,3 +43,30 @@ function createOptions () {
 }
 
 createOptions()
+
+function preventDefaultFunciton (event) {
+    event.preventDefault()
+}
+
+function makeDivPreview () {
+    const fieldsetChindrenNodeList = document.querySelectorAll('input:not([type="radio"]), input[type="radio"]:checked, textarea, select')
+    const div = document.createElement('div')
+
+    document.body.appendChild(div)
+
+    for (let i = 0; i < fieldsetChindrenNodeList.length; i++) {
+        const childDiv = document.createElement('div')
+
+        childDiv.innerText = fieldsetChindrenNodeList[i].value
+        div.appendChild(childDiv)
+    }
+}
+
+function listenToSubmitButton () {
+    const submitButton = document.querySelector('button[type="submit"]')
+
+    submitButton.addEventListener('click', preventDefaultFunciton)
+    submitButton.addEventListener('click', makeDivPreview)
+}
+
+listenToSubmitButton()
