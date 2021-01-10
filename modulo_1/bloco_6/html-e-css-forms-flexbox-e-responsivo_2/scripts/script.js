@@ -89,4 +89,9 @@ function listenToResetButton () {
 
 listenToResetButton()
 
-document.getElementById('data').DatePickerX.init();
+const dataInput = document.getElementById('data')
+
+dataInput.DatePickerX.init({
+    mondayFirst: false,
+    format: 'dd/M/yyyy'
+});
