@@ -126,7 +126,7 @@
           <label for="cargo"
             >Cargo:
             <input
-            class="input is-info"
+              class="input is-info"
               type="text"
               name="cargo"
               id="cargo"
@@ -138,7 +138,7 @@
           <label for="descricao"
             >Descrição do cargo:
             <input
-            class="input is-info"
+              class="input is-info"
               type="text"
               name="descricao"
               id="descricao"
@@ -149,20 +149,26 @@
           <br />
           <label for="data"
             >Data de início:
-            <input class="input is-info" type="date" name="data" id="data" required />
+            <input
+              class="input is-info"
+              type="date"
+              name="data"
+              id="data"
+              required
+            />
           </label>
         </div>
       </div>
 
       <!-- BUTTON INPUT -->
       <div class="field">
-          <div class="control">
-
-          </div>
+        <div class="control">
+          <button class="button is-success" type="submit" id="submit">
+            Submit
+          </button>
+          <button class="button is-danger" type="reset">Reset</button>
+        </div>
       </div>
-
-      <button class="button is-success" type="submit" id="submit">Submit</button>
-      <button class="button is-danger" type="reset">Reset</button>
     </form>
 
     <script src="scripts/script.js"></script>
