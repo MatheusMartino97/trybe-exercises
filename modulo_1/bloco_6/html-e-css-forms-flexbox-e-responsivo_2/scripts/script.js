@@ -48,17 +48,27 @@ function preventDefaultFunciton (event) {
     event.preventDefault()
 }
 
-function makeDivPreview () {
-    const fieldsetChindrenNodeList = document.querySelectorAll('input:not([type="radio"]), input[type="radio"]:checked, textarea, select')
-    const div = document.createElement('div')
+function removeDivPreviewsChildrem () {
+    const previewDivs = document.querySelector('.previews')
+    const previewsDivsChildNodeList = document.querySelectorAll('div.previews div')
 
-    document.body.appendChild(div)
+    
+    for (let i = 0; i < previewsDivsChildNodeList.length; i++) {
+        previewDivs.removeChild(previewsDivsChildNodeList[i])
+    }
+}
+
+function makeDivPreviews () {
+    removeDivPreviewsChildrem()
+
+    const fieldsetChindrenNodeList = document.querySelectorAll('input:not([type="radio"]), input[type="radio"]:checked, textarea, select')
+    const previewDivs = document.querySelector('.previews')
 
     for (let i = 0; i < fieldsetChindrenNodeList.length; i++) {
         const childDiv = document.createElement('div')
 
         childDiv.innerText = fieldsetChindrenNodeList[i].value
-        div.appendChild(childDiv)
+        previewDivs.appendChild(childDiv)
     }
 }
 
@@ -66,7 +76,17 @@ function listenToSubmitButton () {
     const submitButton = document.querySelector('button[type="submit"]')
 
     submitButton.addEventListener('click', preventDefaultFunciton)
-    submitButton.addEventListener('click', makeDivPreview)
+    submitButton.addEventListener('click', makeDivPreviews)
 }
 
 listenToSubmitButton()
+
+function listenToResetButton () {
+    const resetButton = document.querySelector('button[type="reset"]')
+
+    resetButton.addEventListener('click', removeDivPreviewsChildrem)
+}
+
+listenToResetButton()
+
+document.getElementById('data').DatePickerX.init();

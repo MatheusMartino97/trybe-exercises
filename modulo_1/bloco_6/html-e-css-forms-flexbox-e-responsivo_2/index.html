@@ -7,6 +7,8 @@
 
     <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="dist/css/DatePickerX.min.css">
+    <script src="dist/js/DatePickerX.min.js"></script>
   </head>
 
   <body>
@@ -151,7 +153,7 @@
             >Data de início:
             <input
               class="input is-info"
-              type="date"
+              type="text"
               name="data"
               id="data"
               required
@@ -163,13 +165,17 @@
       <!-- BUTTON INPUT -->
       <div class="field">
         <div class="control">
-          <button class="button is-success" type="submit" id="submit">
-            Submit
-          </button>
+        <a href="#previews">
+            <button class="button is-success" type="submit" id="submit">
+                Submit
+              </button>
+        </a>
+          
           <button class="button is-danger" type="reset">Reset</button>
         </div>
       </div>
     </form>
+    <div class="previews" id="previews"></div>
 
     <script src="scripts/script.js"></script>
   </body>
