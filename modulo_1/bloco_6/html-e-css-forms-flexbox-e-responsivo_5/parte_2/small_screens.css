@@ -1,3 +1,38 @@
 body {
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.411);
+}
+
+h1 , h2 , h3 , header p , footer p{
+    text-align: center;
+    margin-top: 25px;
+}
+
+header p {
+    font-weight: bold;
+}
+
+aside li , header li{
+    margin-top: 5px;
+}
+
+
+h1 {
+    font-size: medium;
+}
+
+h2 {
+    font-size: large;
+}
+
+.main-content p {
+    text-align: justify;
+    padding: 10px;
+}
+
+footer {
+    padding: 0 10px;
+}
+
+footer p {
+    text-align: justify;
 }
