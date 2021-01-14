@@ -1,0 +1,56 @@
+body {
+    background-color: rgba(0, 0, 255, 0.308);
+    padding: 20px;
+}
+
+h1 , h2 , h3 , header p , footer p{
+    text-align: left;
+    margin-top: 25px;
+}
+
+header p {
+    font-weight: bolder;
+    font-size: xx-large;
+    text-align: center;
+}
+
+header ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+div.asides {
+    display: flex;
+    justify-content: center;
+}
+
+.asides aside {
+    margin-right: 20%;
+}
+
+aside li , header li{
+    margin-top: 5px;
+}
+
+
+h1 {
+    font-size: large;
+}
+
+h2 {
+    font-size: larger;
+}
+
+.main-content p {
+    text-align: justify;
+    padding: 10px;
+    font-size: large;
+}
+
+footer {
+    padding: 0 10px;
+}
+
+footer p {
+    text-align: justify;
+}
