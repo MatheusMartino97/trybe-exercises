@@ -9,7 +9,7 @@ const books = [
     genre: 'Fantasia',
     author: {
       name: 'George R. R. Martin',
-      birthYear: 1948
+      birthYear: 1948,
     },
     releaseYear: 1991,
   },
@@ -49,7 +49,7 @@ const books = [
     genre: 'Terror',
     author: {
       name: 'Stephen King',
-      birthYear: 1947
+      birthYear: 1947,
     },
     releaseYear: 1986,
   },
@@ -71,12 +71,14 @@ function averageAge() {
   // escreva seu código aqui
 
   const average = books.reduce((acc, book, _, arrayOfBooks) => {
-    return (acc + (book.releaseYear - book.author.birthYear) / arrayOfBooks.length)
-  }, 0)
+    return (
+      acc + (book.releaseYear - book.author.birthYear) / arrayOfBooks.length
+    );
+  }, 0);
 
-  return parseFloat(average.toPrecision(2))
+  return parseFloat(average.toPrecision(2));
 }
 
-console.log(averageAge())
+console.log(averageAge());
 
 assert.strictEqual(averageAge(), expectedResult);

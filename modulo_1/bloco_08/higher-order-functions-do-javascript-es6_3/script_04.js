@@ -9,7 +9,7 @@ const books = [
     genre: 'Fantasia',
     author: {
       name: 'George R. R. Martin',
-      birthYear: 1948
+      birthYear: 1948,
     },
     releaseYear: 1991,
   },
@@ -48,7 +48,7 @@ const books = [
     genre: 'Terror',
     author: {
       name: 'Stephen King',
-      birthYear: 1947
+      birthYear: 1947,
     },
     releaseYear: 1986,
   },
@@ -67,22 +67,22 @@ const books = [
 const expectedResult = {
   author: {
     birthYear: 1948,
-    name: 'George R. R. Martin'
+    name: 'George R. R. Martin',
   },
   genre: 'Fantasia',
   id: 1,
   name: 'As Crônicas de Gelo e Fogo',
-  releaseYear: 1991
+  releaseYear: 1991,
 };
 
 function longestNamedBook() {
   // escreva seu código aqui
 
   const longestName = books.reduce((acc, book) => {
-      return book.name.length > acc.name.length ? book : acc
-  })
+    return book.name.length > acc.name.length ? book : acc;
+  });
 
-  return longestName
+  return longestName;
 }
 
 // console.log(longestNamedBook())
