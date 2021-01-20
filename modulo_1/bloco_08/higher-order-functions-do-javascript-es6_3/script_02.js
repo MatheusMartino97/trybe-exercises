@@ -83,6 +83,8 @@ function allNames() {
   return sliced.join('');
 }
 
+// console.log(allNames())
+
 assert.deepStrictEqual(
   allNames(),
   'Nomes: George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.'

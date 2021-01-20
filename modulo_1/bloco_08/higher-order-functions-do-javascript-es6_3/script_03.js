@@ -77,4 +77,6 @@ function averageAge() {
   return parseFloat(average.toPrecision(2))
 }
 
+console.log(averageAge())
+
 assert.strictEqual(averageAge(), expectedResult);
