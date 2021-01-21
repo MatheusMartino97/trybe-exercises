@@ -16,4 +16,16 @@ function flatten() {
 
 // console.log(flatten())
 
+function flatten2() {
+  const flatArray = [];
+
+  arrays.forEach((array) => {
+    flatArray.push(...array);
+  });
+
+  return flatArray;
+}
+
+// console.log(flatten2());
+
 assert.deepStrictEqual(flatten(), ['1', '2', '3', true, 4, 5, 6]);
