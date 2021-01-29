@@ -11,8 +11,6 @@ const appendJoke = (joke) => {
   jokeContainerHeader2.innerText = joke
 }
 const fetchJoke = () => {
-  // Adicionar lógica aqui!
-
   fetch(API_URL, myObject)
     .then(response => response.json())
     .then(data => {appendJoke(data.joke)})
