@@ -21,3 +21,5 @@ function decypher(string, action) {
     .map((char) => (cypherObg[action][char] ? cypherObg[action][char] : char))
     .join('');
 }
+
+module.exports = decypher;
