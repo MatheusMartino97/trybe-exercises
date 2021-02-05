@@ -1,4 +1,4 @@
-const sum = require('../src/sum.js')
+const sum = require('../src/script_01.js')
 
 describe('Testes da função sum', () => {
   it('A função sum(a, b) retorna a soma do parâmetro a com o b', () => {
