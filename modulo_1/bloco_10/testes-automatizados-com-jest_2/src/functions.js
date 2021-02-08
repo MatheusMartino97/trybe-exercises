@@ -21,9 +21,20 @@ const users = {
     return findUserById(userID).then(user => user.name);
   };
 
+const getRepos = (url) => {
+  const fetch = require('node-fetch');
+  
+  return fetch(url)
+    .then(response => response.json())
+    .then((data) => {
+      return data.map((repo) => repo.name);
+    });
+};
+
   module.exports = {
     uppercase,
     users,
     findUserById,
     getUserName,
+    getRepos,
   }
