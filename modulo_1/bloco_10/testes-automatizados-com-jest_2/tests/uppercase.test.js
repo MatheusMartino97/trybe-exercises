@@ -1,6 +1,4 @@
-const uppercase = (str, callback) => {
-  callback(str.toUpperCase());
-}
+const { uppercase } = require('../src/functions.js')
 
 it('uppercase test to equal TEST', () => {
   uppercase('matheus', (string) => {
