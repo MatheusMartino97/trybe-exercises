@@ -15,10 +15,17 @@ class Texto extends Component {
   }
 }
 
+const estouAprendendo = (content) => {
+  return (
+    <h2>Estou aprendendo { content }</h2>
+  )
+}
+
 function App() {
   return (
   <div>
     <Texto />
+    { estouAprendendo('React') }
   </div>
   );
 }
