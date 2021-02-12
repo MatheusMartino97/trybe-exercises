@@ -6,7 +6,7 @@ class Pokedex extends Component {
   render() {
     const listItems = pokemons.map((pokemon, index) => {
       return (
-        <li key={index}>
+        <div key={index}>
           <Pokemon
             name={pokemon.name}
             type={pokemon.type}
@@ -14,10 +14,10 @@ class Pokedex extends Component {
             measurementUnit={pokemon.averageWeight.measurementUnit}
             image={pokemon.image}
           />
-        </li>
+        </div>
       );
     });
-    return <ul>{listItems}</ul>;
+    return <div>{listItems}</div>;
   }
 }
 

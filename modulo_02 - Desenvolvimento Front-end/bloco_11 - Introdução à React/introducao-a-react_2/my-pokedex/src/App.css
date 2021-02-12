@@ -5,6 +5,13 @@
   background-size: cover;
 }
 
+.title {
+  background-color: rgba(119, 102, 102, 0.349);
+  border-radius: 50%;
+  padding: 10px;
+  border: 5px ridge gray;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -14,7 +21,7 @@
 .pokemon-card {
   display: flex;
   justify-content: center;
-  margin: 5px;
+  margin: 15px;
   border-radius: 5px;
   width: 25vw;
   min-width: 300px;
@@ -30,6 +37,9 @@ h1 {
   -webkit-text-fill-color: transparent;
 }
 
-ul {
-  list-style: outside;
+img {
+  background: linear-gradient(red, red, red, red, black, white, white, white, white);
+  border-radius: 50%;
+  border: 1px solid black;
+  margin-top: 5px;
 }
