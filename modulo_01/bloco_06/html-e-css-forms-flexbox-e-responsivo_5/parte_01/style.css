@@ -1,0 +1,46 @@
+body {
+    font-size: large;
+}
+
+h1 {
+    font-size: x-large;
+}
+
+h2 {
+    font-size: larger;
+}
+
+img {
+    max-width: 100%;
+}
+
+figure {
+    margin: 50px 0;
+}
+
+@media screen and (min-width: 472px) {
+    body {
+        background-color: aqua;
+        font-size: larger;
+    }
+
+    h1 {
+        font-size: xx-large;
+    }
+
+    h2 {
+        font-size: x-large;
+    }
+
+    figure {
+        margin: 5px;
+    }
+
+    img {
+    }
+
+    .flex-container {
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
