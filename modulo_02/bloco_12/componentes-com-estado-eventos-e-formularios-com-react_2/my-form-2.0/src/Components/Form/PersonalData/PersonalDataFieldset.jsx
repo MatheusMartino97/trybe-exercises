@@ -8,6 +8,25 @@ import NameInput from './Inputs/Name';
 import StateInput from './Inputs/State';
 import TypeInput from './Inputs/Type';
 class PersonalDataFieldset extends Component {
+  constructor() {
+    super()
+
+    this.preventSpecialCharacteres = this.preventSpecialCharacteres.bind(this)
+
+    this.state = {
+      adress: ''
+    }
+  }
+
+  preventSpecialCharacteres(event) {
+
+    const valueWithoutSpecials = event.target.value
+      .split('')
+      .map((key) => key.match(/[^\w\s]/gi) ? '' : key)
+      .join('')
+
+    event.target.value = valueWithoutSpecials
+  }
   render() {
     return (
       <fieldset className='personal-data-fieldset'>
@@ -15,7 +34,7 @@ class PersonalDataFieldset extends Component {
         <NameInput />
         <EmailInput />
         <CPFInput />
-        <AdressInput />
+        <AdressInput onChange={this.preventSpecialCharacteres}/>
         <CityInput />
         <StateInput />
         <TypeInput />

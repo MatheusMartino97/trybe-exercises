@@ -13,6 +13,7 @@ class AdressInput extends Component {
           rows='10'
           maxLength='200'
           required
+          onChange={this.props.onChange}
         ></textarea>
       </div>
     );
