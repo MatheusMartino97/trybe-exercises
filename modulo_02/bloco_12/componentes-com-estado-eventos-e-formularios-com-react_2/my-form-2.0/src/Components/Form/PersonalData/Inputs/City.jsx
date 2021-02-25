@@ -1,18 +1,18 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class CityInput extends Component {
   handleBlur() {
-    console.log('iiiiiiiiiiiiiiirrrrra')
+    console.log('iiiiiiiiiiiiiiirrrrra');
   }
 
   render() {
-    return(
+    return (
       <div className='layout-control'>
-      <label htmlFor="city-input">Cidade: </label>
-      <input type="text" maxLength='28' required onBlur={this.handleBlur} />
-    </div>
-    )
+        <label htmlFor='city-input'>Cidade: </label>
+        <input type='text' maxLength='28' required onBlur={this.handleBlur} />
+      </div>
+    );
   }
 }
 
-export default CityInput
+export default CityInput;

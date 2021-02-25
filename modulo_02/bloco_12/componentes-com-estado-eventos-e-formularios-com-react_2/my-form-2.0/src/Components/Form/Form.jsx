@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import PersonalDataFieldset from './PersonalData/PersonalDataFieldset';
+import LastJobFieldset from './LastJob/LastJobFieldset';
 
 class Form extends Component {
   render() {
@@ -10,6 +11,7 @@ class Form extends Component {
           <h1>Formulário</h1>
 
           <PersonalDataFieldset />
+          <LastJobFieldset />
         </form>
       </div>
     );

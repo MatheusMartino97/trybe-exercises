@@ -1,20 +1,20 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class TypeInput extends Component {
   render() {
-    return(
+    return (
       <div className='layout-control'>
-      <label htmlFor="type-input">Moradia: </label>
-      <div>
-        <input type="radio" name="type" id="house" checked required />
-        <label htmlFor="house" >Casa</label>
-        
-        <input type="radio" name="type" id="apartment"/>
-      <label htmlFor="apartment" >Apartamento</label>
+        <label htmlFor='type-input'>Moradia: </label>
+        <div>
+          <input type='radio' name='type' id='house' checked required />
+          <label htmlFor='house'>Casa</label>
+
+          <input type='radio' name='type' id='apartment' />
+          <label htmlFor='apartment'>Apartamento</label>
+        </div>
       </div>
-    </div>
-    )
+    );
   }
 }
 
-export default TypeInput
+export default TypeInput;
