@@ -5,7 +5,7 @@ class PostInput extends Component {
     return (
       <div className='layout-control'>
         <label htmlFor='post-input'>Cargo: </label>
-        <br/>
+        <br />
         <textarea
           name='post-textarea'
           id=''

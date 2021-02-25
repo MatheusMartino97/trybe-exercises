@@ -12,7 +12,6 @@ class LastJobFieldset extends Component {
         <ResumeInput />
         <PostInput />
         <DescriptionInput />
-
       </fieldset>
     );
   }

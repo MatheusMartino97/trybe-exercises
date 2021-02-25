@@ -5,7 +5,7 @@ class DescriptionInput extends Component {
     return (
       <div className='layout-control'>
         <label htmlFor='description-input'>Descrição do cargo: </label>
-        <br/>
+        <br />
         <textarea
           name='description-text-area'
           id=''

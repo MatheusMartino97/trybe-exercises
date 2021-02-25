@@ -5,7 +5,7 @@ class ResumeInput extends Component {
     return (
       <div className='layout-control'>
         <label htmlFor='resume-input'>Resumo do curriculo: </label>
-        <br/>
+        <br />
         <textarea
           name='resume-textarea'
           id=''

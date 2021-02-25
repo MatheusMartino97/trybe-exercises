@@ -5,7 +5,7 @@ class AdressInput extends Component {
     return (
       <div className='layout-control'>
         <label htmlFor='adress-input'>Endereço: </label>
-        <br/>
+        <br />
         <textarea
           name='adress-textarea'
           id=''
