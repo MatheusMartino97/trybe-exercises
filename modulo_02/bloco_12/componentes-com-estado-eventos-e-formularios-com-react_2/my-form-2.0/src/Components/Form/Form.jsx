@@ -7,10 +7,10 @@ class Form extends Component {
   render() {
     return (
       <div>
-        <form action=''>
+        <form action='' onChange={this.props.onChange}>
           <h1>Formulário</h1>
 
-          <PersonalDataFieldset />
+          <PersonalDataFieldset onChange={this.updateFormState} />
           <LastJobFieldset />
         </form>
       </div>

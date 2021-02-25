@@ -5,7 +5,14 @@ class NameInput extends Component {
     return (
       <div className='layout-control'>
         <label htmlFor='name-input'>Nome: </label>
-        <input id='name-input' type='text' maxLength='40' required />
+        <input
+          name='name'
+          id='name-input'
+          type='text'
+          maxLength='40'
+          required
+          onChange={this.props.onChange}
+        />
       </div>
     );
   }

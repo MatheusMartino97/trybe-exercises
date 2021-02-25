@@ -6,12 +6,16 @@ class StateInput extends Component {
     return (
       <div className='layout-control'>
         <label htmlFor='state-input'>Estado: </label>
-        <select name='state' id='' required>
+        <select name='state' id='' required onChange={this.props.onChange} >
+          <option value=""></option>
           {brazilStates.map(({ short, name }) => {
-            const selected = short === 'SP' ? 'selected' : '';
 
             return (
-              <option value={short} key={short} selected={selected}>
+              <option
+                name='state'
+                value={short}
+                key={short}
+              >
                 {name}
               </option>
             );

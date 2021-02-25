@@ -5,7 +5,14 @@ class EmailInput extends Component {
     return (
       <div className='layout-control'>
         <label htmlFor='email-input'>Email: </label>
-        <input id='email-input' type='email' maxLength='50' required />
+        <input
+          name='email'
+          id='email-input'
+          type='email'
+          maxLength='50'
+          required
+          onChange={this.props.onChange}
+        />
       </div>
     );
   }

@@ -5,7 +5,14 @@ class CityInput extends Component {
     return (
       <div className='layout-control'>
         <label htmlFor='city-input'>Cidade: </label>
-        <input type='text' maxLength='28' required onBlur={this.props.onBlur} />
+        <input
+          name='city'
+          type='text'
+          maxLength='28'
+          required
+          onBlur={this.props.onBlur}
+          onChange={this.props.onChange}
+        />
       </div>
     );
   }

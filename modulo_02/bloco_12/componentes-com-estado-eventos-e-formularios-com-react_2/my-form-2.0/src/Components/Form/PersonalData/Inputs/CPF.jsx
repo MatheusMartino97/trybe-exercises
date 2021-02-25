@@ -5,7 +5,13 @@ class CPFInput extends Component {
     return (
       <div className='layout-control'>
         <label htmlFor='CPF-input'>CPF: </label>
-        <input type='text' maxLength='11' required />
+        <input
+          name='cpf'
+          type='text'
+          maxLength='11'
+          required
+          onChange={this.props.onChange}
+        />
       </div>
     );
   }

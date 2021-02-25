@@ -5,11 +5,11 @@ class TypeInput extends Component {
     return (
       <div className='layout-control'>
         <label htmlFor='type-input'>Moradia: </label>
-        <div>
-          <input type='radio' name='type' id='house' checked required />
+        <div onChange={this.props.onChange}>
+          <input type='radio' name='homeType' id='house' value='house' required />
           <label htmlFor='house'>Casa</label>
 
-          <input type='radio' name='type' id='apartment' />
+          <input type='radio' name='homeType' id='apartment' value='apartment' />
           <label htmlFor='apartment'>Apartamento</label>
         </div>
       </div>
