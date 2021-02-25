@@ -11,7 +11,7 @@ class PersonalDataFieldset extends Component {
   constructor() {
     super();
 
-    this.updateState = this.updateState.bind(this);
+    this.updateFieldProperties = this.updateFieldProperties.bind(this);
   }
 
   preventSpecialCharacteres(event) {
@@ -31,7 +31,7 @@ class PersonalDataFieldset extends Component {
     }
   }
 
-  updateState({ target }) {
+  updateFieldProperties({ target }) {
     const { name, value } = target
     const personalDataFieldset = document.querySelector('.personal-data-fieldset')
 
@@ -42,26 +42,27 @@ class PersonalDataFieldset extends Component {
     return (
       <fieldset
         className='personal-data-fieldset'
+        onChange={this.props.onChange}
       >
         <legend>Dados Pessoais</legend>
-        <NameInput onChange={this.updateState} />
-        <EmailInput onChange={this.updateState} />
-        <CPFInput onChange={this.updateState} />
+        <NameInput onChange={this.updateFieldProperties} />
+        <EmailInput onChange={this.updateFieldProperties} />
+        <CPFInput onChange={this.updateFieldProperties} />
         <AdressInput
           onChange={(event) => {
             this.preventSpecialCharacteres(event);
-            this.updateState(event);
+            this.updateFieldProperties(event);
           }}
         />
         <CityInput
           onBlur={(event) => {
             this.verifyIfBeginsWithNumbers(event);
-            this.updateState(event);
+            this.updateFieldProperties(event);
           }}
-          onChange={this.updateState}
+          onChange={this.updateFieldProperties}
         />
-        <StateInput onChange={this.updateState} />
-        <TypeInput onChange={this.updateState} />
+        <StateInput onChange={this.updateFieldProperties} />
+        <TypeInput onChange={this.updateFieldProperties} />
       </fieldset>
     );
   }
