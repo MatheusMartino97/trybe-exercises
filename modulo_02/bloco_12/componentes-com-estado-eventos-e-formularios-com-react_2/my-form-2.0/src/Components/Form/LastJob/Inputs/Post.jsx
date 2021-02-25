@@ -7,12 +7,13 @@ class PostInput extends Component {
         <label htmlFor='post-input'>Cargo: </label>
         <br />
         <textarea
-          name='post-textarea'
+          name='post'
           id=''
           cols='30'
           rows='10'
           maxLength='40'
           required
+          onChange={this.props.onChange}
         ></textarea>
       </div>
     );

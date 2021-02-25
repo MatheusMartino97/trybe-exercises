@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <Form onChange={this.updateFormState}/>
+        <Form />
       </div>
     );
   }

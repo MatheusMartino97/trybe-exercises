@@ -8,19 +8,13 @@ import NameInput from './Inputs/Name';
 import StateInput from './Inputs/State';
 import TypeInput from './Inputs/Type';
 class PersonalDataFieldset extends Component {
-  constructor() {
-    super();
-
-    this.updateFieldProperties = this.updateFieldProperties.bind(this);
-  }
-
-  preventSpecialCharacteres(event) {
-    const valueWithoutSpecials = event.target.value
+  preventSpecialCharacteres({ target }) {
+    const valueWithoutSpecials = target.value
       .split('')
       .map((key) => (key.match(/[^\w\s]/gi) ? '' : key))
       .join('');
 
-    event.target.value = valueWithoutSpecials;
+    target.value = valueWithoutSpecials;
   }
 
   verifyIfBeginsWithNumbers({ target }) {

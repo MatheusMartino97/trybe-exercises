@@ -7,7 +7,8 @@ class Form extends Component {
   constructor() {
     super();
 
-    this.updateFormState = this.updateFormState.bind(this);
+    this.sendPersonalInfoToFormState = this.sendPersonalInfoToFormState.bind(this);
+    this.sendLastJogInfoToFormState = this.sendLastJogInfoToFormState.bind(this)
 
     this.state = {
       adress: '',
@@ -23,12 +24,20 @@ class Form extends Component {
     };
   }
 
-  updateFormState({ target }) {
+  sendPersonalInfoToFormState({ target }) {
     const personalDataFieldset = document.querySelector(
       '.personal-data-fieldset'
     );
 
-    this.setState({ [target.name]: personalDataFieldset[target.name]});
+    this.setState({ [target.name]: personalDataFieldset[target.name] });
+  }
+
+  sendLastJogInfoToFormState({ target }) {
+    const lastJobFieldset = document.querySelector('.last-job-fieldset');
+
+    this.setState({ [target.name]: lastJobFieldset[target.name] });
+
+    console.log('iuuuu')
   }
   render() {
     return (
@@ -36,8 +45,8 @@ class Form extends Component {
         <form action=''>
           <h1>Formulário</h1>
 
-          <PersonalDataFieldset onChange={this.updateFormState} />
-          <LastJobFieldset />
+          <PersonalDataFieldset onChange={this.sendPersonalInfoToFormState} />
+          <LastJobFieldset onChange={this.sendLastJogInfoToFormState}/>
         </form>
       </div>
     );
