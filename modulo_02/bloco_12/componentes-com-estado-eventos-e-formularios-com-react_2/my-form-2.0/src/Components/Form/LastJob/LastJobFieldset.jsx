@@ -10,8 +10,6 @@ class LastJobFieldset extends Component {
     const lastJobFieldset = document.querySelector('.last-job-fieldset');
 
     lastJobFieldset[name] = value;
-
-    console.log(lastJobFieldset);
   }
 
   render() {

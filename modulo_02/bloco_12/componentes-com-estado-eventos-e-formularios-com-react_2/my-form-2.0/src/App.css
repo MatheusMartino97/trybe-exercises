@@ -1,3 +1,16 @@
 #name-input {
   text-transform: uppercase;
 }
+
+.flex-container {
+  display: flex;
+}
+
+.fieldsets, .output {
+  box-sizing: border-box;
+  width: 50%;
+}
+
+.output {
+  visibility: hidden;
+}
