@@ -42,20 +42,33 @@ class Display extends Component {
   }
 
   async handleClick() {
+    const endPoind = `https://dog.ceo/api/breed/${this.state.breed}/images/random`;
+
     if (this.state.breed === '') {
       this.randomDog()
+      return
     }
-    const endPoind = `https://dog.ceo/api/breed/${this.state.breed}/images/random`;
 
     this.setState({ loading: true });
 
-    const response = await fetch(endPoind);
-    const dogObject = await response.json();
-    const imagePath = dogObject.message;
+    try {
+      const response = await fetch(endPoind);
+      const dogObject = await response.json();
+      const imagePath = dogObject.message;
 
-    this.setState({
-      imagePath,
-    });
+      this.setState({
+        imagePath,
+      });
+
+      if (dogObject.status !== 'success') {
+        this.setState({imagePath: 'https://www.pngkey.com/png/detail/395-3958023_sad-puppy-drawing-dog.png'})
+        throw(Error)
+      }
+  
+    } catch (error) {
+      
+      window.alert('Breed not found')
+    }
 
     this.setState({ loading: false });
   }
@@ -65,13 +78,22 @@ class Display extends Component {
 
     this.setState({ loading: true });
 
-    const response = await fetch(endPoind);
-    const dogObject = await response.json();
-    const imagePath = dogObject.message;
+    try {
+      const response = await fetch(endPoind);
+      const dogObject = await response.json();
+      const imagePath = dogObject.message;
+  
+      this.setState({
+        imagePath,
+      });
 
-    this.setState({
-      imagePath,
-    });
+      if (dogObject.status !== 'success') {
+        throw(Error)
+      }
+
+    } catch (error) {
+      window.alert('Dog not found')
+    }
 
     this.setState({ loading: false });
   }
