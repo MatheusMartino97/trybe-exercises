@@ -1,3 +1,7 @@
 .App {
   text-align: center;
 }
+
+.fixed-links a {
+  margin: 0 5px;
+}
