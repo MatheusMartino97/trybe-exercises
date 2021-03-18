@@ -8,41 +8,7 @@ import Contact from './pages/Contact';
 import About from './pages/About';
 import PageNotFound from './pages/PageNotFound';
 
-describe('Testando a página PageNotFound', () => {
-  it('Testando se a imagem do foguete aparece', () => {
-    const { getByAltText } = renderWithRouter(<PageNotFound />);
-    const rocketImage = getByAltText('logo');
 
-    expect(rocketImage).toBeInTheDocument();
-    expect(rocketImage.className).toBe('App-logo');
-    expect(rocketImage.localName).toBe('img');
-    expect(rocketImage.src).toBe('http://localhost/logo.svg');
-  });
-
-  it('Testando se o texto Página não encontrada aparece', () => {
-    const { getByText } = renderWithRouter(<PageNotFound />);
-    const pageNotFoundHeader = getByText('Página não encontrada');
-
-    expect(pageNotFoundHeader).toBeInTheDocument();
-  });
-
-  it('Testando se o link Home existe', () => {
-    const { getByText } = renderWithRouter(<PageNotFound />);
-    const linkToHome = getByText('Home');
-
-    expect(linkToHome).toBeInTheDocument();
-    expect(linkToHome.localName).toBe('a');
-  });
-
-  it('Testando se o link Home redireciona para a página Home', () => {
-    const { getByText, history } = renderWithRouter(<PageNotFound />);
-    const linkToHome = getByText('Home');
-
-    fireEvent.click(linkToHome);
-
-    expect(history.location.pathname).toBe('/');
-  });
-});
 
 describe('Testes da página Home', () => {
   it('Testando se a imagem do foguete aparece', () => {
@@ -87,7 +53,7 @@ describe('Testes da página Home', () => {
     expect(history.location.pathname).toBe('/projects');
   });
 
-  it('Testando se o link Contato redireciona para /projects', () => {
+  it('Testando se o link Contato redireciona para /contact', () => {
     const { getByTestId, history } = renderWithRouter(<Home />);
     const linkToContact = getByTestId('contact-link');
 
@@ -206,6 +172,42 @@ describe('Testando a página About', () => {
 
   it('Testando se o link Home redireciona para a página Home', () => {
     const { getByText, history } = renderWithRouter(<About />);
+    const linkToHome = getByText('Home');
+
+    fireEvent.click(linkToHome);
+
+    expect(history.location.pathname).toBe('/');
+  });
+});
+
+describe('Testando a página PageNotFound', () => {
+  it('Testando se a imagem do foguete aparece', () => {
+    const { getByAltText } = renderWithRouter(<PageNotFound />);
+    const rocketImage = getByAltText('logo');
+
+    expect(rocketImage).toBeInTheDocument();
+    expect(rocketImage.className).toBe('App-logo');
+    expect(rocketImage.localName).toBe('img');
+    expect(rocketImage.src).toBe('http://localhost/logo.svg');
+  });
+
+  it('Testando se o texto Página não encontrada aparece', () => {
+    const { getByText } = renderWithRouter(<PageNotFound />);
+    const pageNotFoundHeader = getByText('Página não encontrada');
+
+    expect(pageNotFoundHeader).toBeInTheDocument();
+  });
+
+  it('Testando se o link Home existe', () => {
+    const { getByText } = renderWithRouter(<PageNotFound />);
+    const linkToHome = getByText('Home');
+
+    expect(linkToHome).toBeInTheDocument();
+    expect(linkToHome.localName).toBe('a');
+  });
+
+  it('Testando se o link Home redireciona para a página Home', () => {
+    const { getByText, history } = renderWithRouter(<PageNotFound />);
     const linkToHome = getByText('Home');
 
     fireEvent.click(linkToHome);
