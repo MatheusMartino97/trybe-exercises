@@ -10,8 +10,6 @@ import PageNotFound from './pages/PageNotFound'
 
 function App() {
   return (
-    
-    <BrowserRouter>
       <Switch>
         <Route path="/projects" component={ Projects } />
         <Route path="/contact" component={ Contact } />
@@ -19,7 +17,6 @@ function App() {
         <Route exact path="/" component={ Home } />
         <Route component={ PageNotFound } />
       </Switch>
-    </BrowserRouter>
   );
 }
 
