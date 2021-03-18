@@ -9,10 +9,10 @@ class Home extends React.Component {
         <div className="App">
           <header className="App-header">
             <img src={ logo } className="App-logo" alt="logo" />
-            <h1>Meu portifólio</h1>
+            <h1>Meu portfólio</h1>
             <Link data-testid="projects-link" to="/projects">Projetos</Link>
-            <Link to="/contact">Contato</Link>
-            <Link to="/about">Sobre</Link>
+            <Link data-testid="contact-link" to="/contact">Contato</Link>
+            <Link data-testid="about-link" to="/about">Sobre</Link>
           </header>
         </div>
       </div>

@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Projects from './pages/Projects'
+import PageNotFound from './pages/PageNotFound'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/contact" component={ Contact } />
         <Route path="/about" component={ About } />
         <Route exact path="/" component={ Home } />
+        <Route component={ PageNotFound } />
       </Switch>
     </BrowserRouter>
   );

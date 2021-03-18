@@ -8,7 +8,7 @@ class Contact extends React.Component {
       <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1>Contatos</h1>
+        <h1>Contato</h1>
         <Link to="/">Home</Link>
       </header>
     </div>
