@@ -8,8 +8,6 @@ import Contact from './pages/Contact';
 import About from './pages/About';
 import PageNotFound from './pages/PageNotFound';
 
-
-
 describe('Testes da página Home', () => {
   it('Testando se a imagem do foguete aparece', () => {
     const { getByAltText } = renderWithRouter(<Home />);
