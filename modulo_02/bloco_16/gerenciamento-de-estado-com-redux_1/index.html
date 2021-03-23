@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redux Counter</title>
+
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        height: 95vh;
+        align-items: center;
+      }
+    </style>
+
+    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <button id="decrement">-1</button>
+      <span id="counter">0</span>
+      <button id="increment">+1</button>
+    </div>
+
+    <script>
+      const INCREMENT = 'INCREMENT'
+      const DECREMENT = 'DECREMENT'
+
+      const incrementAction = () => {
+        return {
+          type: INCREMENT
+        }
+      }
+
+      const decrementAction = () => {
+        return {
+          type: DECREMENT
+        }
+      }
+
+      const counterReducer = (state = 0, action) => {
+        switch(action.type) {
+          case INCREMENT:
+            return state + 1;
+
+          case DECREMENT:
+            return state - 1;
+
+          default:
+            return state;
+        }
+      }
+
+      const store = Redux.createStore(
+        counterReducer,
+        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+      )
+
+      function listenToDecrementButton() {
+        const decrementButton = document.querySelector('#decrement')
+
+        decrementButton.addEventListener('click', () => {
+          store.dispatch(decrementAction())
+        })
+      }
+
+      function listenToIncrementButton() {
+        const incrementButton = document.querySelector('#increment')
+
+        incrementButton.addEventListener('click', () => {
+          store.dispatch(incrementAction())
+        })
+      }
+
+      listenToDecrementButton()
+      listenToIncrementButton()
+
+      store.subscribe(() => {
+        const counterDisplay = document.querySelector('#counter')
+
+        counterDisplay.innerText = store.getState()
+      })
+    </script>
+  </body>
+</html>
