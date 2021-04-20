@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import ToDoListContext from '../contexts/ToDoListContext'
-import Inputs from '../components/Inputs';
-import Tasks from '../components/Tasks';
 
 class ToDoList extends Component {
   constructor() {
@@ -33,6 +31,8 @@ class ToDoList extends Component {
 
   render() {
     const { taskList, task } = this.state;
+    const { children } = this.props;
+
     return (
       <ToDoListContext.Provider value={ {
         handleChange: this.handleChange,
@@ -40,8 +40,7 @@ class ToDoList extends Component {
         taskList,
         task,
       } }>
-        <Inputs />
-        <Tasks />
+        {children}
       </ToDoListContext.Provider>
     );
   }
