@@ -1,0 +1,1 @@
+db.books.find({}, { _id: false, title: true, isbn: true }).limit(3)
