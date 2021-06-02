@@ -1,0 +1,1 @@
+> db.superheroes.find({ $or: [{ race: { $ne: "Human" } }, { "aspects.height": { $lte: 180 } }] });
