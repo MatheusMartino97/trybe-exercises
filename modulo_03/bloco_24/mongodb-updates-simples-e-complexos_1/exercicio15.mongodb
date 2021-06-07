@@ -1,0 +1,1 @@
+db.xmen.updateMany({}, { $set: { power: 100 } ,$rename: { name: "hero_name", true_name: "full_name" }, $currentDate: { lastUpdate: true, lastUpdate: { $type: "timestamp" } } });

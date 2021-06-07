@@ -1,0 +1,1 @@
+db.xmen.updateMany({ class: "gama" }, { $max: { power: 300 }, $currentDate: { lastUpdate: true, lastUpdate: { $type: "timestamp" } } });
