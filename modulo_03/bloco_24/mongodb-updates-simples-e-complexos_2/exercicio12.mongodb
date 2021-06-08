@@ -1,0 +1,1 @@
+db.movies.updateOne({ title: "Batman" }, { $push: { "cast.$[movie].actor": { $each: ["Michael Keaton", "Val Kilmer", "George Clooney"] } } }, { arrayFilters: [{ "movie.character": "Batman" }] });

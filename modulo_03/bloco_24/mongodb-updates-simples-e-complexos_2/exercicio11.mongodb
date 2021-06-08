@@ -1,0 +1,5 @@
+db.movies.updateOne({ title: "Batman" }, { $set: { "cast.$[movie].actor": ["Christian Bale"] } }, { arrayFilters: [{ "movie.character": "Batman" }] });
+
+db.movies.updateOne({ title: "Batman" }, { $set: { "cast.$[movie].actor": ["Michael Caine"] } }, { arrayFilters: [{ "movie.character": "Alfred" }] });
+
+db.movies.updateOne({ title: "Batman" }, { $set: { "cast.$[movie].actor": ["Heath Ledger"] } }, { arrayFilters: [{ "movie.character": "Coringa" }] });
