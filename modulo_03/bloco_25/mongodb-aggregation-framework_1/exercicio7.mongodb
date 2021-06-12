@@ -1,0 +1,31 @@
+use('erp');
+
+db.clientes.aggregate([
+  {
+    /**
+     * _id: The id of the group.
+     * fieldN: The first field name.
+     */
+    $group: {
+      _id: {
+        sexo: "$sexo",
+        uf: "$endereco.uf"
+      },
+      total: {
+        $sum: 1
+      }
+    }
+  },
+  {
+    /**
+     * specifications: The fields to
+     *   include or exclude.
+     */
+    $project: {
+      _id: false,
+      "estado": "_id.uf",
+      "sexo": "_id.sexo",
+      "total": true
+    }
+  }
+])
