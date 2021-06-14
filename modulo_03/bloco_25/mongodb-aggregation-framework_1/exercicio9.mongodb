@@ -1,0 +1,63 @@
+use('erp');
+
+db.vendas.aggregate([
+  {
+    /**
+     * query: The query in MQL.
+     */
+    $match: {
+      status: { $in: ["EM SEPARACAO", "ENTREGUE"] }
+    }
+  },
+  {
+    /**
+     * _id: The id of the group.
+     * fieldN: The first field name.
+     */
+    $group: {
+      _id: "$clienteId",
+      valorTotal: {
+        $sum: "$valorTotal"
+      }
+    }
+  },
+  {
+    /**
+     * Provide any number of field/order pairs.
+     */
+    $sort: {
+      valorTotal: -1
+    }
+  },
+  {
+    /**
+     * Provide the number of documents to limit.
+     */
+    $limit: 10
+  },
+  {
+    /**
+     * from: The target collection.
+     * localField: The local join field.
+     * foreignField: The target join field.
+     * as: The name for the results.
+     * pipeline: The pipeline to run on the joined collection.
+     * let: Optional variables to use in the pipeline field stages.
+     */
+    $lookup: {
+      from: 'clientes',
+      localField: '_id',
+      foreignField: 'clienteId',
+      as: 'cliente'
+    }
+  },
+  {
+    /**
+     * specifications: The fields to
+     *   include or exclude.
+     */
+    $project: {
+      "cliente.nome": true
+    }
+  }
+])

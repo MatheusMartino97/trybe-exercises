@@ -1,0 +1,41 @@
+use('erp');
+
+db.vendas.aggregate([
+  {
+    /**
+     * _id: The id of the group.
+     * fieldN: The first field name.
+     */
+    $group: {
+      _id: "$clienteId",
+      totalDeCompras: {
+        $sum: 1
+      }
+    }
+  },
+  {
+    /**
+     * query: The query in MQL.
+     */
+    $match: {
+      totalDeCompras: {
+        $gte: 5
+      }
+    }
+  },
+  {
+    $group: {
+      _id: null,
+      clientesComMaisDe5Compras: { $sum: 1 }
+    }
+  },
+  {
+    /**
+     * specifications: The fields to
+     *   include or exclude.
+     */
+    $project: {
+      _id: false
+    }
+  }
+])

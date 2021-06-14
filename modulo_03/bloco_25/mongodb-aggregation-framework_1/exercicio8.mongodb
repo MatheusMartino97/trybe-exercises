@@ -1,0 +1,33 @@
+use('erp');
+
+db.vendas.aggregate([
+  {
+    /**
+     * query: The query in MQL.
+     */
+    $match: {
+      status: { $in: ["EM SEPARACAO", "ENTREGUE"] }
+    }
+  },
+  {
+    /**
+     * _id: The id of the group.
+     * fieldN: The first field name.
+     */
+    $group: {
+      _id: "$clienteId",
+      valorTotal: { $sum: "$valorTotal" }
+    }
+  },
+  {
+    $sort: {
+      valorTotal: -1
+    }
+  },
+  {
+    /**
+     * Provide the number of documents to limit.
+     */
+    $limit: 5
+  }
+]);

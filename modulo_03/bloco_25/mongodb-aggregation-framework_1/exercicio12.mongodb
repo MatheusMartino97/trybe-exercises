@@ -1,0 +1,56 @@
+use('erp');
+
+db.vendas.aggregate([
+  {
+    $group: {
+      _id: "$clienteId",
+      totalDeCompras: {
+        $sum: 1
+      }
+    }
+  },
+  {  
+    $lookup: {
+      from: 'clientes',
+      localField: '_id',
+      foreignField: 'clienteId',
+      as: 'dadosCliente'
+    }
+  },
+  {
+    $group: {
+      _id: "$dadosCliente.endereco.uf",
+      totalVendas: {
+        $sum: 1
+      }
+    }
+  },
+  {
+    /**
+     * Provide any number of field/order pairs.
+     */
+    $sort: {
+      totalVendas: -1
+    }
+  },
+  {
+    /**
+     * path: Path to the array field.
+     * includeArrayIndex: Optional name for index.
+     * preserveNullAndEmptyArrays: Optional
+     *   toggle to unwind null and empty values.
+     */
+    $unwind: "$_id",
+  },
+  {
+    /**
+     * specifications: The fields to
+     *   include or exclude.
+     */
+    $project: {
+      totalVendas: true,
+      "uf": "$_id",
+      _id: false
+    }
+  }
+])
