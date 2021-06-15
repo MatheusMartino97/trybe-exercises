@@ -1,0 +1,11 @@
+use('agg_examples');
+
+db.sales.aggregate([
+  {
+    $project: {
+      price: true,
+      fee: true,
+      totalPrice: { $add: ["$price", "$fee"] }
+    }
+  }
+])

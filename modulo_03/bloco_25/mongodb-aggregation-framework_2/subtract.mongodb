@@ -1,0 +1,21 @@
+use('agg_examples');
+
+db.sales.aggregate([
+  {
+    $match: {
+      discount: { $exists: true }
+    }
+  },
+  {
+    $project: {
+      _id: false,
+      price: true,
+      fee: true,
+      discount: true,
+      profit: { $subtract: [
+        { $add: ["$price", "$fee"] },
+        "$discount"
+      ] }
+    }
+  }
+])
