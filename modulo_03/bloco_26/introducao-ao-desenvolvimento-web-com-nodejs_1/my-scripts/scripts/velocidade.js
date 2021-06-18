@@ -1,8 +1,8 @@
 module.exports = () => {
   const { questionInt } = require('readline-sync');
 
-  const distance = questionInt('Qual foi a distância percorrida? (metros)');
-  const time = questionInt('Quando tempo demorou? (segundos)');
+  const distance = questionInt('Distância em metros: ');
+  const time = questionInt('Tempo em segundos: ');
 
   function getAverageSpeed(distance, time) {
     const averageSpeed = (distance / time).toFixed(2);

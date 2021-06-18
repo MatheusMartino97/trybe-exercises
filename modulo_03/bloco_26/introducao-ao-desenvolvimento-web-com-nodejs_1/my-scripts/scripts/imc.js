@@ -1,8 +1,8 @@
 module.exports = () => {
   const { questionFloat } = require('readline-sync');
 
-  const weight = questionFloat('Qual é o seu peso?');
-  const height = questionFloat('Qual é a sua altura?');
+  const weight = questionFloat('Digite seu peso: ');
+  const height = questionFloat('Digite sua altura: ');
 
   function matchIMC(IMC) {
     let result;
