@@ -6,15 +6,19 @@ module.exports = () => {
   );
 
   function getFibonacci(length) {
-    const numbers = [0, 1];
+    let numbers = [1, 1];
 
-    for (let i = 2; i < length; i++) {
-      const nextNumber = numbers[i - 2] + numbers[i - 1]
-
-      numbers.push(nextNumber)
+    if (length > 2) {
+      for (let i = 2; i < length; i++) {
+        const nextNumber = numbers[i - 2] + numbers[i - 1]
+  
+        numbers.push(nextNumber)
+      }
+    } else {
+      numbers = numbers.slice(0, length)
     }
 
-    console(numbers)
+    console.log(numbers)
   }
 
   getFibonacci(length)
