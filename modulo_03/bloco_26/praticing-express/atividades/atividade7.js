@@ -21,13 +21,11 @@ router.post(
       ingredientes
     }
 
-    console.log(ingredientes)
-
     if (!recipe) return res.status(404).json({ message: 'id not found' })
 
     await setRecipes([...filteredRecipes, newRecipe])
 
-    return res.status(200).json({ message: 'receita atualizada' })
+    return res.status(200).json({ adicionandos: ingredientes })
   })
 );
 
