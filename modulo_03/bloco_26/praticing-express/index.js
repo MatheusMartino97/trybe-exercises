@@ -15,8 +15,8 @@ const {
   atividade7,
   atividade8,
   atividade9,
-  atividade10
-} = require('./atividades')
+  atividade10,
+} = require('./atividades');
 
 app.use(bodyParser.json());
 
@@ -26,8 +26,9 @@ app.use('/posts', atividade3);
 app.use('/users', atividade4);
 app.use('/', atividade5);
 app.use('/recipes', atividade6, atividade7);
-app.use('/comments', atividade8)
-app.use('/user', atividade9)
+app.use('/comments', atividade8);
+app.use('/user', atividade9);
+app.use('/recipe', atividade10);
 
 app.listen(PORT, () => {
   console.log(`Listening to port ${PORT}`);
