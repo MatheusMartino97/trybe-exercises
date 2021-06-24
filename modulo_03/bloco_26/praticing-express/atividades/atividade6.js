@@ -10,21 +10,28 @@ const router = express.Router();
 
 router.post(
   '/:id',
-  rescue(async (req, res) => {
+  rescue(async (req, res, next) => {
     const { id: paramId } = req.params;
+    const { ingredientes } = req.body
+
     const recipes = await getRecipes();
 
     const filteredRecipes = recipes.filter(
       ({ id }) => id !== parseInt(paramId)
     );
 
-    if (!filteredRecipes.length) return res.status(404).json({ message: 'id not found' })
-
     const deletedRecipe = recipes.find(({ id }) => id === parseInt(paramId));
 
-    await setRecipes(filteredRecipes);
+    if (!deletedRecipe) return res.status(404).json({ message: 'id not found' })
 
-    res.status(200).json({ deleted: deletedRecipe })
+    if (!ingredientes) {
+      
+      await setRecipes(filteredRecipes);
+      
+      return res.status(200).json({ deleted: deletedRecipe })
+    }
+
+    next()
   })
 );
 

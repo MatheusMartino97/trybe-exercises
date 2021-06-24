@@ -4,7 +4,7 @@
 const express = require('express');
 const router = express.Router();
 
-router.post('/:operaocao/:numero1/:numero2', [
+router.post('/:operacao/:numero1/:numero2', [
   (req, res, next) => {
     const { operacao, numero1, numero2 } = req.params;
     const result = parseFloat(numero1) + parseFloat(numero2);
