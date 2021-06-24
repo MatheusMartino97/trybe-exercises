@@ -7,9 +7,9 @@ const getRecipes = async () => {
 };
 
 const setRecipes = async (recipes) => {
-  const fileContent = JSON.stringify(recipes);
+  const newContent = JSON.stringify(recipes);
 
-  await fs.writeFile('./data/recipes.json', fileContent);
+  await fs.writeFile('./data/recipes.json', newContent);
 };
 
 module.exports = {

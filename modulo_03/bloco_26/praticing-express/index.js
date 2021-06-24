@@ -24,9 +24,10 @@ app.use('/login', atividade1);
 app.use('/btc', atividade2);
 app.use('/posts', atividade3);
 app.use('/users', atividade4);
-// app.use('/', atividade5);
+app.use('/', atividade5);
 app.use('/recipes', atividade6, atividade7);
 app.use('/comments', atividade8)
+app.use('/user', atividade9)
 
 app.listen(PORT, () => {
   console.log(`Listening to port ${PORT}`);
