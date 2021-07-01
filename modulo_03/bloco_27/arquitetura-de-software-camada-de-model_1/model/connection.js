@@ -20,13 +20,13 @@
 
 // module.exports = connection;
 
-const mysql = require('mysql2/promise');
+// const mysql = require('mysql2/promise');
 
-const connection = mysql.createPool({
-  host: 'localhost',
-  user: 'tryber',
-  password: '@APll0K1',
-  database: 'users_crud',
-});
+// const connection = mysql.createPool({
+//   host: 'localhost',
+//   user: 'tryber',
+//   password: '@APll0K1',
+//   database: 'users_crud',
+// });
 
-module.exports = connection;
+// module.exports = connection;

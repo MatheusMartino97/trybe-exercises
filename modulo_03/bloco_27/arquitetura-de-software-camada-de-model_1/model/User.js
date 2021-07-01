@@ -1,23 +1,23 @@
 const connection = require('./connection');
 const { ObjectId } = require('mongodb');
 
-// const getAll = () => {
-//   return connection()
-//     .then((db) => db.collection('users').find().toArray())
-//     .then((result) =>
-//       result.map(({ _id, firstName, lastName, email }) => ({
-//         id: _id,
-//         firstName,
-//         lastName,
-//         email,
-//       }))
-//     );
-// };
-
 const getAll = () => {
-  return connection.execute('SELECT * FROM users_crud.users')
-    .then((result) => result[0])
-}
+  return connection()
+    .then((db) => db.collection('users').find().toArray())
+    .then((result) =>
+      result.map(({ _id, firstName, lastName, email }) => ({
+        id: _id,
+        firstName,
+        lastName,
+        email,
+      }))
+    );
+};
+
+// const getAll = () => {
+//   return connection.execute('SELECT * FROM users_crud.users')
+//     .then((result) => result[0])
+// }
 
 const getById = (id) => {
   return connection()
