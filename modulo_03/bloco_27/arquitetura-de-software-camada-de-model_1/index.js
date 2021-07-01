@@ -13,22 +13,22 @@ app.get('/user', async (_req, res) => {
   res.status(200).json(users)
 })
 
-app.get('/user/:id', async (req, res) => {
-  const { id } = req.params
+// app.get('/user/:id', async (req, res) => {
+//   const { id } = req.params
 
-  const user = await User.getById(id)
+//   const user = await User.getById(id)
 
-  res.status(200).json(user)
-})
+//   res.status(200).json(user)
+// })
 
-app.post('/user', async (req, res) => {
-  const { firstName, lastName, email, password } = req.body
-  const insertedUser = await User.create(firstName, lastName, email, password)
+// app.post('/user', async (req, res) => {
+//   const { firstName, lastName, email, password } = req.body
+//   const insertedUser = await User.create(firstName, lastName, email, password)
 
-  const { password: pw, ...user } = insertedUser
+//   const { password: pw, ...user } = insertedUser
 
-  res.status(201).json(user)
-})
+//   res.status(201).json(user)
+// })
 
 app.listen(PORT, () => {
   console.log(`Listening port ${PORT}`);
