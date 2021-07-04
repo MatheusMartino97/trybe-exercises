@@ -1,7 +1,9 @@
-const validateCEP = require('./validateCEP');
+const getCepValidations = require('./getCepValidations');
+const postCepValidations = require('./postCepValidations')
 const handleError = require('./handleError');
 
 module.exports = {
-  validateCEP,
+  getCepValidations,
+  postCepValidations,
   handleError,
 };

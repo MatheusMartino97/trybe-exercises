@@ -12,6 +12,13 @@ const verifyCEP = async (cep) => {
   };
 };
 
+const verifyCEPInfos = async (cep, logradouro, bairro, localidade, uf) => {
+  const response = await cepModel.addCEP(cep, logradouro, bairro, localidade, uf)
+
+  return response;
+}
+
 module.exports = {
   verifyCEP,
+  verifyCEPInfos
 };
