@@ -22,8 +22,8 @@ router.post('/', [
     const { cep, logradouro, bairro, localidade, uf } = req.body;
     await cepService
       .verifyCEPInfos(cep, logradouro, bairro, localidade, uf)
-      .then((response) => res.status(200).json(response))
-      .catch((err) => next({ type: 400, message: err.message }));
+      .then((response) => res.status(201).json(response))
+      .catch((err) => next({ type: 409, message: err.message }));
   },
 ]);
 
