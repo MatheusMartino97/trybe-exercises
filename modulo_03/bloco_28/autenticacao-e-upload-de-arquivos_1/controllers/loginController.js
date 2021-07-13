@@ -1,7 +1,6 @@
 const usersModel = require('../models/usersModel');
 const rescue = require('express-rescue');
 const jwt = require('jsonwebtoken');
-const JWT_SECRET = process.env.JWT_SECRET
 
 const login = rescue(async (req, res) => {
   const { username, password } = req.body;
@@ -17,7 +16,21 @@ const login = rescue(async (req, res) => {
     algorithm: 'HS256',
   };
 
-  const token = jwt.sign({ data: user }, JWT_SECRET, jwtConfig)
+  const jwtPayload = {
+    data: {
+      user: username,
+      admin: false,
+    },
+  };
+
+  if (
+    username === process.env.ADMIN_USERNAME ||
+    password === process.env.ADMIN_PASSWORD
+  ) {
+    jwtPayload.data.admin = true;
+  }
+
+  const token = jwt.sign(jwtPayload, process.env.JWT_SECRET, jwtConfig);
 
   return res.status(200).json({ token });
 });

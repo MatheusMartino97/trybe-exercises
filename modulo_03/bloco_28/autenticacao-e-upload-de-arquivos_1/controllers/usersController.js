@@ -20,13 +20,26 @@ const getAllUsers = rescue(async (_req, res) => {
   try {
     const allUsers = await usersService.getAllUsers();
 
-    return res.status(200).json(allUsers)
+    return res.status(200).json(allUsers);
   } catch (error) {
-    return res.status(500).json({ error: error.message })
+    return res.status(500).json({ error: error.message });
   }
-})
+});
+
+const getUser = rescue(async (req, res) => {
+  const { username } = req.body;
+
+  try {
+    const user = await usersService.getUser(username);
+
+    return res.status(200).json(user)
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+});
 
 module.exports = {
   signIn,
-  getAllUsers
+  getAllUsers,
+  getUser
 };

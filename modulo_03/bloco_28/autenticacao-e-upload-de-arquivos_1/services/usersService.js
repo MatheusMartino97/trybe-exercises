@@ -8,11 +8,13 @@ const signIn = async (username, password) => {
 
   return { _id: signedUser._id, username: signedUser.username };
 }
-  
 
 const getAllUsers = async () => await usersModel.getAllUsers();
+
+const getUser = async (username) => await usersModel.getUser(username)
 
 module.exports = {
   signIn,
   getAllUsers,
+  getUser
 };
