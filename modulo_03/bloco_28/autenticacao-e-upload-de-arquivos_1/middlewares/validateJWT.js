@@ -12,7 +12,7 @@ module.exports = rescue(async (req, res, next) => {
 
   try {
     const decode = jwt.verify(token, JWT_SECRET);
-    const user = await usersModel.getUser(decode.data.username);
+    const user = await usersModel.getUser(decode.data.user);
 
     if (!user) {
       return res
