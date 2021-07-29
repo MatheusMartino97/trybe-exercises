@@ -7,7 +7,8 @@ module.exports = {
         title: 'Harry Potter',
         author: 'J. K. Rowling',
         pageQuantity: 1000,
-        createdAt: Sequelize.literal('CURRENT_TIMESTAMP')
+        createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
+        updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       }
     ])
   },
