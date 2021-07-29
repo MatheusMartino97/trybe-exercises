@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "tryber",
+    "password": "@APll0K1",
+    "database": "orm_exercise",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "tryber",
+    "password": "@APll0K1",
+    "database": "orm_exercise",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "tryber",
+    "password": "@APll0K1",
+    "database": "orm_exercise",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
+}
